@@ -1,0 +1,13 @@
+{
+  "name": "bomb-busters-online",
+  "version": "1.0.0",
+  "description": "炸弹克星 · 网页联机版（合作推理拆弹桌游）",
+  "private": true,
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node test/rules.test.js && N=2 node test/sim.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" }
+}

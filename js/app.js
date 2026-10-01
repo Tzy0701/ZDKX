@@ -27,7 +27,7 @@
     screen: 'home', name: store.get('name', ''), pid: store.get('pid', null),
     mode: null, net: null, code: null, lobby: null, G: null, V: null, pub: null, hand: null,
     log: [], chat: [], sel: null, hostPeer: null, hostGone: false, deadline: null,
-    cleared: store.get('cleared', []), err: '', netKind: null, joining: false
+    cleared: store.get('cleared', []), err: '', netKind: null, joining: false, view3d: store.get('view3d', true)
   };
   if (!S.pid) { S.pid = rid(10, 'abcdefghijkmnpqrstuvwxyz23456789'); store.set('pid', S.pid); }
 
@@ -409,16 +409,39 @@
     }
     var m = mission(V.mid), me = myIdx(), over = V.phase === 'won' || V.phase === 'lost';
     var turnP = V.players[V.turn];
+    var main = $('#g-main');
+    var turnTxt = (V.phase === 'setup' ? '<b>布置阶段</b>' : over ? '<b>' + (V.phase === 'won' ? '任务成功' : '任务失败') + '</b>' :
+        '第 ' + V.turnNo + (V.turnLimit ? ' / ' + V.turnLimit : '') + ' 回合 · 轮到 <b>' + esc(turnP.name) + '</b>' + (V.turn === me ? '（你）' : '')) +
+      (V.deadline && V.phase === 'play' ? ' <span id="timer" class="timer"></span>' : '') + (V.stab ? ' <span class="tag">稳定器已启动</span>' : '');
+    var viewBtn = '<button class="btn tiny ghost" data-act="view">' + (S.view3d ? '切换平面视图' : '切换 3D 牌桌') + '</button>';
+    var banners = (S.hostGone ? '<div class="banner bad">房主连接中断。房主重新进入同一房间后会自动恢复牌局。</div>' : '') + (over ? endBanner(V) : '');
+    if (S.view3d) {
+      if (main.dataset.mode !== '3d') {
+        main.dataset.mode = '3d';
+        main.innerHTML = '<section id="g-hud" class="panel hud3"></section><div id="g-ban"></div><div id="g-stage" class="stage3"></div><section id="g-con" class="panel console3"></section>';
+      }
+      $('#g-hud').innerHTML = '<div class="hud-l"><span class="eyebrow">任务 ' + m.id + ' · ' + m.tier + '</span><h2>' + esc(m.name) + '</h2><div class="chips">' + ruleChips(m) + '</div></div>' +
+        '<div class="hud-r"><span class="turnline">' + turnTxt + '</span><span class="tag' + (V.det >= V.detMax - 1 ? ' warn' : '') + '">失误 ' + V.det + ' / ' + V.detMax + '</span>' + viewBtn + '</div>';
+      $('#g-ban').innerHTML = banners;
+      Table3D.render($('#g-stage'), V, {
+        me: me, sel: S.sel, mission: m, dd: m.dd,
+        clickable: function (w, o) { return clickable(V, w, o, me); },
+        countCut: function (v) { return countCut(V, v); },
+        equipState: function (e) { return equipStatus(V, me, e); }
+      });
+      $('#g-con').innerHTML = me >= 0 ? actionPanel(V, me) : '<p class="muted">你正在观战。</p>';
+      renderLog();
+      renderChat();
+      chatLock(over, m);
+      return;
+    }
+    main.dataset.mode = '2d';
     var h = '';
     // HUD
     h += '<section class="hud panel' + (over ? (V.phase === 'won' ? ' won' : ' lost') : '') + '">' +
       '<div class="hud-l"><p class="eyebrow">任务 ' + m.id + ' · ' + m.tier + '</p><h2>' + esc(m.name) + '</h2><div class="chips">' + ruleChips(m) + '</div></div>' +
-      '<div class="hud-r">' + detonator(V) +
-      '<div class="turnline">' + (V.phase === 'setup' ? '<b>布置阶段</b>' : over ? '<b>' + (V.phase === 'won' ? '任务成功' : '任务失败') + '</b>' :
-        '第 ' + V.turnNo + (V.turnLimit ? ' / ' + V.turnLimit : '') + ' 回合 · 轮到 <b>' + esc(turnP.name) + '</b>' + (V.turn === me ? '（你）' : '')) +
-      (V.deadline && V.phase === 'play' ? ' <span id="timer" class="timer"></span>' : '') + (V.stab ? ' <span class="tag">稳定器已启动</span>' : '') + '</div></div></section>';
-    if (S.hostGone) h += '<div class="banner bad">房主连接中断。房主重新进入同一房间后会自动恢复牌局。</div>';
-    if (over) h += endBanner(V);
+      '<div class="hud-r">' + detonator(V) + '<div class="turnline">' + turnTxt + '</div>' + viewBtn + '</div></section>';
+    h += banners;
     // 公共信息
     h += '<section class="panel boardinfo">' + track(V, m) + markers(V) + equipRow(V, me) + '</section>';
     // 其他玩家
@@ -428,12 +451,21 @@
     // 自己
     if (me >= 0) h += '<section class="panel mine-zone">' + playerBlock(V, V.players[me], me, me, true) + actionPanel(V, me) + '</section>';
     else h += '<section class="panel"><p class="muted">你正在观战。</p></section>';
-    $('#g-main').innerHTML = h;
+    main.innerHTML = h;
     renderLog();
     renderChat();
+    chatLock(over, m);
+  }
+  function chatLock(over, m) {
     var ci = $('#chatin');
     var blocked = !over && m.rules.noChat;
     ci.disabled = blocked; ci.placeholder = blocked ? '本关禁止聊天' : '说点什么（不要直接报出自己的线）';
+  }
+  function equipStatus(V, me, e) {
+    var d = BB.EQUIP[e.n];
+    var myTurn = V.turn === me && V.phase === 'play' && !V.pending;
+    var usable = me >= 0 && e.open && !e.used && V.phase === 'play' && !V.pending && (d.any || myTurn);
+    return { usable: usable, label: e.used ? '已使用' : e.open ? (usable || d.any ? '可使用' : '仅限自己回合') : '剪掉 2 根 ' + e.n + ' 解锁' };
   }
   function detonator(V) {
     var cells = '';
@@ -474,11 +506,9 @@
   }
   function equipRow(V, me) {
     if (!V.equip.length) return '';
-    var myTurn = V.turn === me && V.phase === 'play' && !V.pending;
     return '<div class="equips"><span class="sub-l">装备</span>' + V.equip.map(function (e) {
       var d = BB.EQUIP[e.n];
-      var usable = me >= 0 && e.open && !e.used && V.phase === 'play' && !V.pending && (d.any || myTurn);
-      var st = e.used ? '已使用' : e.open ? (usable ? '可使用' : d.any ? '可使用' : '仅限自己回合') : '剪掉 2 根 ' + e.n + ' 解锁';
+      var es = equipStatus(V, me, e), usable = es.usable, st = es.label;
       var on = S.sel && S.sel.mode === 'eq' && S.sel.n === e.n;
       return '<button class="eq' + (e.used ? ' used' : e.open ? ' open' : '') + (on ? ' on' : '') + '" data-act="eq" data-n="' + e.n + '"' + (usable ? '' : ' disabled') + ' title="' + esc(d.desc) + '">' +
         '<span class="eq-n">' + e.n + '</span><span class="eq-t">' + d.name + '</span><span class="eq-s">' + st + '</span></button>';
@@ -660,14 +690,14 @@
 
   /* ---------- 事件 ---------- */
   document.addEventListener('click', function (ev) {
-    var b = ev.target.closest('[data-go],[data-act],.tile');
+    var b = ev.target.closest('[data-go],[data-act],.tile,.slot[data-w]');
     if (!b) return;
     if (b.dataset.go) {
       var g = b.dataset.go;
       if (g === 'home' && S.mode) g = S.lobby && S.lobby.started ? 'game' : 'lobby';
       go(g); return;
     }
-    if (b.classList.contains('tile')) { onTile(+b.dataset.w, +b.dataset.o, +b.dataset.s); return; }
+    if (b.dataset.w !== undefined) { onTile(+b.dataset.w, +b.dataset.o, +b.dataset.s); return; }
     var a = b.dataset.act, V = S.V, me = myIdx();
     switch (a) {
       case 'solo-start': startSolo(); break;
@@ -696,6 +726,7 @@
       case 'again': hostStart(); break;
       case 'nextm': S.lobby.mid = Math.min(66, V.mid + 1); hostStart(); break;
       case 'tolobby': S.lobby.started = false; S.G = null; S.V = null; emitLobby(); go('lobby'); break;
+      case 'view': S.view3d = !S.view3d; store.set('view3d', S.view3d); render(); break;
       case 'mode': S.sel = b.dataset.m === 'dd' ? { mode: 'dd', wires: [] } : null; render(); break;
       case 'red': doAct({ a: 'red' }); break;
       case 'solo': doAct({ a: 'solo', val: parseVal(b.dataset.v) }); break;
@@ -776,6 +807,13 @@
   });
   document.addEventListener('keydown', function (ev) {
     if (ev.key === 'Escape' && S.sel) { S.sel = null; render(); }
+    var sl = ev.target.closest && ev.target.closest('.slot[data-w]');
+    if (sl && (ev.key === 'Enter' || ev.key === ' ')) { ev.preventDefault(); onTile(+sl.dataset.w, +sl.dataset.o, +sl.dataset.s); }
+  });
+  var rzT = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(rzT);
+    rzT = setTimeout(function () { if (S.screen === 'game' && S.view3d && $('#g-stage')) { renderGame(); Table3D.fit($('#g-stage')); } }, 150);
   });
 
   render();

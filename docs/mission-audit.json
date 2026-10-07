@@ -1,0 +1,4868 @@
+{
+  "schemaVersion": 2,
+  "reviewedAt": "2026-10-05",
+  "scope": "Base game missions 1–66; excludes KIT PRO and bonus missions. Printed cards reviewed; audio and box-wide component rules remain separate gates.",
+  "sources": {
+    "physicalCards": {
+      "workshop": "https://steamcommunity.com/sharedfiles/filedetails/?id=3361000399",
+      "edition": "German physical-card scans credited to snake514230 by workshop author; exact printing not identified. Community-hosted, not a publisher-certified digital edition.",
+      "frontAtlas": "https://steamusercontent-a.akamaihd.net/ugc/14532955715995593030/1B7ECCF715B909658CDCB6CCB45E0CE46DA81546/",
+      "backAtlas": "https://steamusercontent-a.akamaihd.net/ugc/15122844308764148837/7499C2A4E4D4B66317B926A740AB1F05224D0BAB/",
+      "columns": 10,
+      "rows": 7,
+      "indexing": "row-major, zero-based slot = missionId - 1",
+      "sha256": {
+        "front": "1a57705fd9bab35f1d75c5ba49df3d39088795b50f7cce21aa3962f3935d6a3d",
+        "back": "746c17d7e2637446c851a726ac3dc7999723d24dcd44b2a599048004edf290e5"
+      }
+    },
+    "publisherRules": "https://pegasus.de/en/NetiMedia/download?mediaId=019813124cca7d3285e79316299b9c0c",
+    "publisherErrata": "https://pegasus.de/en/NetiMedia/download?mediaId=0198a1e7972f71d78f36aef903cf9d0c",
+    "publisherFAQ": "https://www.cocktailgames.com/nos-jeux/bomb-busters-faq/",
+    "publisherAudio": "https://pegasus.de/Bomb-Busters-English-Edition-Game-of-the-Year-2025/51280.USA",
+    "mechanismCatalog": "official-mechanisms.json"
+  },
+  "limitations": [
+    "The printed-card and component review does not certify engine implementation.",
+    "All five box introductions, additional equipment/characters, constraint/challenge cards and mission66 map now have separate source records in official-mechanisms.json.",
+    "Audio mechanisms have ASR-assisted draft records; exact signal edges and sound events require listening review and scenario tests.",
+    "Some edition wording and instant-effect timing remain explicitly unresolved; see openImplementationRulings and sourceConflicts.",
+    "Existing perfect-information simulations validate the adapted catalog, not official missions9-66.",
+    "No original artwork or full card/audio text is redistributed."
+  ],
+  "missions": [
+    {
+      "id": 1,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 0,
+        "row": 1,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          6
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 0,
+          "candidates": 0
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "蓝线 1–6，每值四根；无共享装备；个人双重探测器可用。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          6
+        ],
+        "red": [
+          0,
+          0
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": 0,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/0"
+    },
+    {
+      "id": 2,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 1,
+        "row": 1,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          8
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 0,
+          "candidates": 0
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "蓝线 1–8；黄线候选限 1.1–7.1；无共享装备；初始线索只能蓝色。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          8
+        ],
+        "red": [
+          0,
+          0
+        ],
+        "yellow": [
+          2,
+          2
+        ],
+        "equipment": 0,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/1"
+    },
+    {
+      "id": 3,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 2,
+        "row": 1,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          10
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "蓝线 1–10；红线候选限 1.5–9.5；共享装备每人一张，排除 11 和 12。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          10
+        ],
+        "red": [
+          1,
+          1
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/2"
+    },
+    {
+      "id": 4,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 3,
+        "row": 1,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "黄4"
+      },
+      "ruleSummary": "标准基础设置；所有特殊线位置已知。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          1
+        ],
+        "yellow": [
+          2,
+          2
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/3"
+    },
+    {
+      "id": 5,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 4,
+        "row": 1,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "黄线三候选选二；红线已知。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          1
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/4"
+    },
+    {
+      "id": 6,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 5,
+        "row": 1,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "四根黄线；单人拆全部四根或先剪一对后的最后两根。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          1
+        ],
+        "yellow": [
+          4,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/5"
+    },
+    {
+      "id": 7,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 6,
+        "row": 1,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红1/3"
+      },
+      "ruleSummary": "红线两候选选一；不使用黄线。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/6"
+    },
+    {
+      "id": 8,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "physical-training-tested",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 7,
+        "row": 1,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "红1/3，黄4"
+      },
+      "ruleSummary": "毕业训练；黄、红线均有不确定候选。",
+      "requiredCapability": "基础规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "contentVersion": 13
+      },
+      "comparison": "Physical setup replaces the legacy adaptation.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/7"
+    },
+    {
+      "id": 9,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 8,
+        "row": 1,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "红2，黄4"
+      },
+      "ruleSummary": "三张数字卡配顺序 A：当前数字剪两根才可剪下一张；其他数字不受限；无合法行动时失败。",
+      "requiredCapability": "数字卡、两根顺序门槛",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/8"
+    },
+    {
+      "id": 10,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 9,
+        "row": 1,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "全局12分钟"
+      },
+      "ruleSummary": "全局十五分钟，自由抢回合；通常不能连续行动，剩两位可行动者时例外；排除咖啡杯。",
+      "requiredCapability": "全局计时、抢回合",
+      "audioRequired": false,
+      "remainingVerification": [
+        "黄色解锁双层底盒13的即时触发时机仍待发行商明确裁定；不能以未用装备的参考通关代替完整装备验收。",
+        "更多随时装备清空正在行动玩家、全局计时与装备决定／最后剪线结算、整局联机界面和实际Mac Safari还需验收；当前未替换公开改编任务。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          4,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/9",
+      "developmentModule": "timed-free-turn",
+      "developmentAcceptance": [
+        "新增timed-free-turn开发模块：原德文正反卡48蓝、4已知黄、1已知红；共享装备人数张并排除咖啡。全局15分钟／双人12分钟，布置后才开始，任意玩家先抢回合，三人以上持线时上一位不能连续；发行商FAQ确认剩两名或以下恢复连续。2–5人全部队长8种子配置通过。",
+        "抢回合绑定递增决定编号，竞争仅首位成功；目标确认／本人选副本仍是标准私有决定，不能结算中抢回合。换回合截止不变，暂停保留剩余时间，截止直接任务失败不加引爆器；真实截止后的迟到回应不能通关，客户端timeout拒绝。核心专项退出码0。",
+        "2–5人权威服务竞争／冒用／观战／重复命令拒绝，凭据暂停重启恢复保留总时间和决定编号；真实服务重启时截止到期由服务定时器失败，不重新给时限。追加目标确认／本人副本选择两阶段各重启恢复、只有对应玩家收到菜单、观战切其视角仍无私有选择、旧回应拒绝及未完成本人选择时真实截止失败通过。",
+        "2–5人加观众375像素实际三维切二维：非队长先抢、本人回合提示、刷新保留行动者、两次真实四根单拆、多人禁止连续／双人允许、所有人原截止和轮序一致、观众无抢入口、无异常溢出。夹具重排后段，不当作整局证明；浏览器退出码0。",
+        "16来源开局推理机器人2胜14败864合法动作／245次抢回合，非法／停止／超限0；使用自己手牌和公开持线数。原基础实体、战役模块及暂停回归退出码0。旧改编第10关存档不添加新规则或计时。",
+        "100固定原始发牌全信息参考通关：2–5人各25种子，9290合法动作、2636次抢回合、527单拆、2009双拆、100次主动红线公开；原开局不改，每回合截止不变，未用即时底盒，不认证任意发牌或生产推理。"
+      ]
+    },
+    {
+      "id": 11,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 10,
+        "row": 2,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 0,
+          "candidates": 0
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "黄4，队长无初始线索"
+      },
+      "ruleSummary": "随机数字的四根蓝线变为红线，不能剪，末尾公开；排除该数字装备。",
+      "requiredCapability": "蓝线变红、装备筛选",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒即时效果触发时机未裁定，开发实现仍按手动使用，未据此认证任务。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "noChat": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/10"
+    },
+    {
+      "id": 12,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 11,
+        "row": 2,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "红2根已知；黄4根已知"
+      },
+      "ruleSummary": "每张装备另配数字卡；印刷编号与额外数字均剪两根才解锁；新增装备也有门槛。",
+      "requiredCapability": "装备双重解锁",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒的即时效果触发时机尚未裁定，开发版本暂按手动使用结算；不得据此认证第12关。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "timer": 60
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/11"
+    },
+    {
+      "id": 13,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 12,
+        "row": 2,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "队长两红分两架，无初始线索"
+      },
+      "ruleSummary": "红线预分配；随机初始蓝色线索；不能公开红线，须一次指中三根红线；失败爆炸；不能用装备。",
+      "requiredCapability": "红线三目标特殊行动",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "random-blue-token",
+        "detonatorAdjustment": 0,
+        "officialModule": "risky-red-cut"
+      },
+      "comparison": "按实体卡先分三根红线，再把剩余导线补至各架尽量均分；双人队长每架一红且不抽初始标记。一根红线的双架位置不公开。初始随机蓝色标记由本人选择对应线或缺值旁置；冒险一次宣告三根，逐位公开确认后同时剪断，选错立即爆炸，装备和个人能力不能保护或修改此行动。旧版改编存档仍按原规则恢复。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/12"
+    },
+    {
+      "id": 14,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 13,
+        "row": 2,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "红3，黄4"
+      },
+      "ruleSummary": "重新随机分发含队长卡的角色；持队长卡的人为队长及新人，新人发起的双人拆线失败立即爆炸，不能使用稳定器保护。",
+      "requiredCapability": "身份、角色失败例外",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒即时效果触发时机仍未裁定，开发实现保留抽取资格与现有使用方式，未据此认证任务。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "fog": true
+        }
+      },
+      "comparison": "公开战役第14关仍使用旧改编规则；开发模块已实现新人机制，但双层底盒触发时机未裁定，不提前提高核实状态。",
+      "resourceCoverage": "已找到任务卡正反面及所需组件来源",
+      "mechanismReference": "official-mechanisms.json#/missions/13",
+      "developmentModule": "rookie",
+      "developmentAcceptance": [
+        "2–5人来源设置：48蓝、2根已知红、3选2黄；双人3根已知红、4根已知黄；随机队长角色先于分架，架长均衡。",
+        "新人普通、双重、三重、超级及X/Y双人拆线失败立即爆炸；成功仍由队友公开回应、行动玩家选择自己的任意匹配线。",
+        "拒绝新人直接使用稳定器、组合修饰及队友代用，不耗牌不改状态；旧保护标志不能保护新人。单人拆线与红线公开照常。",
+        "100局来源设置全信息通关，共6894个合法动作；64局只依自身手牌和公开信息的推理机器人合法终局。",
+        "2–5人权威服务端验证身份持久化、公开目标与私有选择、观战、暂停、重连、重启、过期拒绝及重复指令去重。",
+        "2–5人手机宽度Chromium二维／三维检查通过：新人及禁用原因、全员目标箭头、公开回应、重连与重复手牌选择。双人界面完整通关，所有人数新人首次安全猜错立即失败。实际MacBook Safari未复测。"
+      ]
+    },
+    {
+      "id": 15,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 14,
+        "row": 2,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2/3"
+      },
+      "ruleSummary": "共享装备背面向上；数字卡当前值四根完成才盲翻一张装备直接可用；已经完成的数字跳过。",
+      "requiredCapability": "盲装备、数字解锁",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "officialModule": "blind-equipment"
+      },
+      "comparison": "按实体卡实现隐藏且打乱的共享装备、数字牌堆、四根完成后的团队盲翻、跳过已完成数字及直接可用的装备。背面装备编号与身份不会进入任何玩家或观战视图，也不能通过装备拒绝理由探测。旧改编存档保留原规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/14"
+    },
+    {
+      "id": 16,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 15,
+        "row": 2,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "红2，黄4"
+      },
+      "ruleSummary": "顺序 B：当前数字全部四根剪完才允许下一个；其他数字不受限；无合法行动失败。",
+      "requiredCapability": "四根顺序门槛",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "parity",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/15"
+    },
+    {
+      "id": 17,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 16,
+        "row": 2,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "随机重发角色，持队长卡者为公开的说谎者；无个人卡，两枚错误开局标记不可放红线。猜错他的线时标猜测值表示不等于；不能主动用装备，可回应对讲机与雷达。",
+      "requiredCapability": "公开身份、错误数值线索与角色移除",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": "除说谎者外每人一张",
+        "initialInfo": "说谎者两枚错误数值标记，其余各一枚真实蓝色标记",
+        "detonatorAdjustment": 0,
+        "officialModule": "liar"
+      },
+      "comparison": "身份公开，重发含队长卡的角色后再按人数分架。错误标记与真实标记共用每值两枚供给，耗尽仅临时口头提示；已剪标记移回重用。错误含义随带标记导线交换，原有真实标记也保留含义。说谎者没有可被电池恢复的角色卡，猜测回应及雷达仍如实；X/Y未命中时由目标选择一个本次宣告值作为错误标记。旧改编存档继续原规则。",
+      "resourceCoverage": "已找到并查看任务卡正反面及基础组件来源",
+      "mechanismReference": "official-mechanisms.json#/missions/16"
+    },
+    {
+      "id": 18,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 17,
+        "row": 2,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "无初始线索；只有通用雷达且可重复用；每回合翻数字并逐架问答，再指定玩家拆该值。",
+      "requiredCapability": "可重复雷达、指定行动者",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": [
+          8
+        ],
+        "personalDoubleDetector": true,
+        "initialInfo": "none",
+        "detonatorAdjustment": 0,
+        "officialModule": "radar-command"
+      },
+      "comparison": "按实体任务卡实现翻数字卡、逐架公开雷达回应及指定行动者；只有共享雷达且无须解锁、每回合重复使用。下一回合从原轮值玩家左邻继续；旧改编存档保留原用线与任务规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/17"
+    },
+    {
+      "id": 19,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 18,
+        "row": 2,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "按发行商录音进行；卡面没有全部时间事件。",
+      "requiredCapability": "音频时间线",
+      "audioRequired": true,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试",
+        "Exact audio signal/sound cues and synchronized pause/reconnect behavior"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "countdown": 10
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/18"
+    },
+    {
+      "id": 20,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 19,
+        "row": 2,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "红2/3，黄4"
+      },
+      "ruleSummary": "每人最后发到的线不排序放最右 X；装备不影响 X；无对讲机；X 不可初始标记。",
+      "requiredCapability": "X 独立位置与装备限制",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒即时效果触发时机尚未裁定；本开发任务保留其抽取资格，不能据此认证全部装备交互。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "hide": true
+        }
+      },
+      "comparison": "公开战役第20关仍使用改编规则；开发模块已通过X导线设置和交互验证，底盒即时触发门槛尚未解决。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/19",
+      "developmentModule": "unsorted-x",
+      "developmentAcceptance": [
+        "2–5人、全部队长位置的来源设置：48蓝、2根已知红和2根已知黄；双人3选2红、4根已知黄。每人最后收到的一根为X，保留发到的架并放该架最右侧；两架合计一根。普通区独立升序，架长均衡。",
+        "X不能初始标记；所有共享和个人装备忽略X，不抽对讲机。标签、便利贴、探测器、稳定器和X/Y拒绝影响X，拒绝不改状态；探测器自己的匹配线也不能选X。雷达逐架忽略X，超级排除X，三重仅余两根普通线时允许选两根。",
+        "普通双人、单人拆线和主动公开红线包含X；正常猜错仍提供真实失败线索，猜红X仍爆炸。普通成功可由本人选择重复手牌中的X，装备成功排除它。公开X位置不泄露其值。",
+        "100局来源设置全信息通关，共6933个合法动作；64局仅依自身手牌和公开信息的推理机器人合法终局。机器人不把未知或已知X当作普通区的排序边界。",
+        "2–5人权威服务端覆盖装备私有选择、暂停、重连、重启恢复、过期拒绝与重复请求去重；旧存档不会因导线标志启用X规则。",
+        "隔离本机2–5名独立客户端、375像素手机宽度、Chromium二维／三维检查通过：X标记、初始和装备禁选、普通X拆线、探测器私人选择及刷新恢复。双人实际界面完整通关；实际MacBook Safari未复测。"
+      ]
+    },
+    {
+      "id": 21,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 20,
+        "row": 3,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "整局线索只显示奇偶，含拆错和便利贴。",
+      "requiredCapability": "奇偶线索全流程",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "parity",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "parity",
+        "contentVersion": 13
+      },
+      "comparison": "已替换为官方任务模块；完成设置、机制、私有视图与浏览器验收。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/20",
+      "implementationEvidence": {
+        "contentVersion": 4,
+        "module": "parity",
+        "tests": [
+          "test/campaign-rules.test.js",
+          "test/physical.test.js",
+          "test/campaign-rules.browser.js"
+        ],
+        "rules": [
+          "clues parity for setup, failed cuts, Sticky Notes",
+          "eleven odd and eleven even tokens",
+          "physical wire setup and two-player override",
+          "no exact-value failure clues"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "module-in-development",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 21,
+        "row": 3,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "开局同时选择两个自己整手牌没有的不同值，可选黄；两架各旁置一枚，缺失不足两个则少放。首对黄线剪断后，按队长顺序从中央备用区取新标记交给左邻，由左邻摆放。",
+      "requiredCapability": "缺失值线索、传递线索",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒的精确触发时机",
+        "后续奖励标记颜色及已剪导线的摆放边界",
+        "第22关旁置标记耗尽的任务例外",
+        "完成上述裁定后再验收并替换公开改编任务"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "timer": 45
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/21",
+      "developmentModule": "missing-value-pass"
+    },
+    {
+      "id": 23,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 22,
+        "row": 3,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2/3"
+      },
+      "ruleSummary": "七张背面装备；随机数字须四根一起特殊拆除；失败爆炸；完成前每轮弃一装备，成功后剩余直接解锁。",
+      "requiredCapability": "四目标特殊拆线、整轮计数",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": 7,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "precision-four",
+        "contentVersion": 14
+      },
+      "comparison": "官方第23关已加入内容版本14；原改编存档保留自身版本和规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/22",
+      "developmentModule": "precision-four",
+      "developmentAcceptance": [
+        "原始正反任务卡与发行商FAQ：48蓝、红1/3、无黄，双人红2/3；七张背面装备，初始标记完成后才公开随机数字。",
+        "2–5人全部队长设置、背面身份隐藏、普通拆线禁用目标数字、四目标跨玩家宣告、当前回应者私人答案、旧回应拒绝与拒绝不改状态通过。",
+        "四根全部正确才同时剪断，成功后剩余装备直接公开解锁；错误立即爆炸不剪任何选中导线。每整轮弃一张，初始完整轮后保留六张通过。",
+        "100局来源配置全信息参考求解完整通关，共5726个特殊动作后的合法动作；16局基础角色机器人合法终局。现有第13关三红规则与权威回归通过。",
+        "隔离本机2–5人独立Chromium、375像素手机二维／三维通过：四根选择、所有人看到四个公开箭头、本人回应隐私、刷新继续及剩余装备直接解锁。进程退出码0，无网页异常；实际MacBook Safari未复测。",
+        "2–5人成功／失败每个回应阶段的权威暂停、重连、重启、私人答案、隐藏装备、冒充与旧决定拒绝及请求去重通过。",
+        "浏览器2–5人错误立即爆炸且不剪任何选中线，正确直接解锁、暂停和刷新恢复；双人真实网页完整通关。",
+        "已清空座位跳过、跨队长位置整轮边界、最后一名玩家及成功后非回合便利贴／雷达／对讲机直接可用且只用一次通过。",
+        "版本14正式发布验收完成：完整回归两目录各528局无错误／停住，13200局两目录参考求解无失败；真实公网HTTPS/WSS2–5人通过，双人完整通关；旧版本13改编存档兼容性通过。"
+      ]
+    },
+    {
+      "id": 24,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 23,
+        "row": 3,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "频率 ×1/×2/×3 标记替代数值，计数包含已剪线；四根用两个 ×2；对讲机交换丢弃频率标记。",
+      "requiredCapability": "频率标记",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "frequency",
+        "contentVersion": 13
+      },
+      "comparison": "已替换为官方任务模块；完成设置、机制、私有视图与浏览器验收。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/23",
+      "implementationEvidence": {
+        "contentVersion": 4,
+        "module": "frequency",
+        "tests": [
+          "test/campaign-rules.test.js",
+          "test/physical.test.js",
+          "test/campaign-rules.browser.js"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 24,
+        "row": 3,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "不能说数字；可以其他表达；说数字引爆器前进一格。",
+      "requiredCapability": "沟通约束、口头处罚",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "officialModule": "nonverbal-values"
+      },
+      "comparison": "实体设置、点数手势宣告与语音违规报告；服务端每次合法报告罚一格，不跳回合。语音本身由玩家遵守和报告，未采用自动语音识别。旧改编存档保持原黄／红线设置和规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/24"
+    },
+    {
+      "id": 26,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 25,
+        "row": 3,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "十二张数字卡；回合前翻掉一张并拆该值，全用完重置；无匹配可跳过；排除 X/Y。",
+      "requiredCapability": "数字卡消耗与重置",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "number-cycle",
+        "contentVersion": 13
+      },
+      "comparison": "已替换为官方任务模块；完成设置、机制、私有视图与浏览器验收。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/25",
+      "implementationEvidence": {
+        "contentVersion": 4,
+        "module": "number-cycle",
+        "tests": [
+          "test/campaign-rules.test.js",
+          "test/physical.test.js",
+          "test/campaign-rules.browser.js"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "module-in-development",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 26,
+        "row": 3,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "队长无初始线索"
+      },
+      "ruleSummary": "无个人角色卡，排除备用电池7；双人队长不放初始标记。首对黄线剪断后，从备用区随机公开人数份标记，按队长顺序逐人选择并摆放到自己的线前，没有该值时旁置。",
+      "requiredCapability": "条件发线索、角色禁用",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒的精确触发时机",
+        "后续奖励标记颜色及已剪导线的摆放边界",
+        "完成上述裁定后再验收并替换公开改编任务"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "turns": 8
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/26",
+      "developmentModule": "yellow-info-draft"
+    },
+    {
+      "id": 28,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 27,
+        "row": 3,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "保留指定队长并移除其个人角色；队长不能主动用共享装备，发起双人拆线失败立即爆炸；仍可参与队友的对讲机与雷达。",
+      "requiredCapability": "队长装备与失败约束",
+      "audioRequired": false,
+      "remainingVerification": [
+        "双层底盒即时效果触发时机尚未裁定；保留其正常抽取资格，未据此认证完整任务。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "none",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "missing": true
+        }
+      },
+      "comparison": "公开第28关仍是改编规则；开发版本已实现队长装备与失败约束，保留独立验收状态。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/27",
+      "developmentModule": "unequipped-captain",
+      "developmentAcceptance": [
+        "2–5人全部队长位置：48蓝、4根已知黄、2根已知红；双人3根已知红。保留指定队长，不重新抽取身份；队长角色移除，其他玩家双重探测器独立可用。开局每人一枚蓝线信息标记，架长均衡、每架独立排序。",
+        "队长蓝线或红线猜错立即爆炸，不推进引爆器或放错误线索；成功仍先公开目标结果，再私下选择自己的重复手牌。别人以队长为目标时按正常失败规则处理。",
+        "队长主动使用全部共享及个人装备、X/Y和稳定器均拒绝且状态不变；队友不能代用稳定器保护队长，旧保护状态不生效。队长可回应交换和雷达，电池不能恢复移除角色；单拆和主动公开红线正常。",
+        "100局来源设置全信息通关，共7013个合法动作；64局仅依本人手牌和公开信息的推理机器人合法终局。",
+        "2–5人权威服务端验证固定身份、公开结果和私有重复手牌选择、观战只读、暂停、重连、重启、过期拒绝及重复指令去重。",
+        "隔离本机2–5名独立客户端、375像素手机宽度、Chromium二维／三维检查通过：公开队长身份、禁用装备原因、公开目标箭头、私有重复手牌选择及刷新恢复。双人完整通关，各人数队长首次蓝线猜错立即失败。实际MacBook Safari未复测。"
+      ]
+    },
+    {
+      "id": 29,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 28,
+        "row": 3,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "队长无初始线索"
+      },
+      "ruleSummary": "私有数字牌；右邻回合前秘密挑牌，行动后揭示，相同宣告值罚一格；牌随后传递补充。",
+      "requiredCapability": "秘密数字牌、转移规则",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "每人一枚，双人队长不放",
+        "detonatorAdjustment": 0,
+        "officialModule": "secret-number-pass"
+      },
+      "comparison": "来源设置、私人数字牌流程、任务例外、机器人、权威服务端和手机双视图已通过验收；统一战役采用官方模块。",
+      "resourceCoverage": "已找到并查看任务卡正反面、数字牌组件与发行商例外说明",
+      "mechanismReference": "official-mechanisms.json#/missions/28",
+      "developmentModule": "secret-number-pass",
+      "developmentAcceptance": [
+        "2–5人全部队长位置：48蓝、3根已知红、无黄；每人2张秘密数字牌，队长右邻3张。双人队长无初始标记，其他玩家每人1枚。",
+        "右邻秘密选择，实际拆线后公开，牌值与实际剪线相同才追加一格；探测器未剪候选不计。数字牌交给行动者，四根完成值退场，只剩一个待剪蓝值时弃其数字牌；一张时从牌堆补充，空手玩家的数字牌放牌堆底，右邻无牌继续向右找。",
+        "咖啡杯跳过拆线并直接收下秘密牌，不公开、不处罚。稳定器不能抵消数字牌追加处罚。秘密牌和值不发送给其他玩家；只有选牌者拥有待选项，翻牌要求本人确认。",
+        "100局来源设置全信息通关，共11040个合法动作；64局仅依私人手牌与公开信息的机器人合法终局。",
+        "2–5人权威服务端测试选牌与翻牌中暂停、重连、重启恢复、身份冒用拒绝、过期决定和重复请求去重。",
+        "隔离本机2–5名独立客户端、375像素手机宽度、Chromium二维／三维检查通过：选牌选项仅本人可见，公开翻牌及处罚、重复手牌、选牌和翻牌中刷新恢复。双人故意触发一次合法处罚后完整通关。实际MacBook Safari未复测。"
+      ],
+      "contentVersion": 12
+    },
+    {
+      "id": 30,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 29,
+        "row": 3,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "数字卡及发行商音频；回合安排依录音。",
+      "requiredCapability": "音频、数字卡",
+      "audioRequired": true,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试",
+        "Exact audio signal/sound cues and synchronized pause/reconnect behavior"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "seq": 2
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/29"
+    },
+    {
+      "id": 31,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 30,
+        "row": 4,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "建议避免同时使用 A+B 或 C+D；并非禁止，无额外用线调整"
+      },
+      "ruleSummary": "领取初始标记前可看自己的手牌，依队长顺序自选 A–E；自己回合开始无法遵守时永久翻面。",
+      "requiredCapability": "个人限制卡",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalCharacters": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "officialModule": "personal-constraints"
+      },
+      "comparison": "已替换为实体个人限制流程，并通过2–5人、选择恢复与浏览器验收；与旧版改编存档按内容版本隔离。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/30"
+    },
+    {
+      "id": 32,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 31,
+        "row": 4,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "共享十二张限制牌一次一张；队长回合可更换；无法行动免费跳过；公开红线例外。",
+      "requiredCapability": "共享限制牌、跳过",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "infoN": 2
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/31"
+    },
+    {
+      "id": 33,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 32,
+        "row": 4,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "整局仅奇偶线索，含失败和便利贴；不额外添加迷雾规则。",
+      "requiredCapability": "奇偶线索全流程",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "personalCharacters": true,
+        "initialInfo": "parity",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "parity",
+        "contentVersion": 13
+      },
+      "comparison": "已实现官方奇偶任务及第三盒角色，完成设置、角色、私有回应、恢复和各人数浏览器验收。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/32",
+      "implementationEvidence": {
+        "contentVersion": 5,
+        "module": "parity",
+        "tests": [
+          "test/campaign-rules.test.js",
+          "test/physical.test.js",
+          "test/official.test.js",
+          "test/campaign-rules.browser.js"
+        ],
+        "rules": [
+          "初始、失败和便利贴使用奇偶标记",
+          "四种新角色状态与共享装备独立",
+          "队长双重探测器、有限新角色卡",
+          "2–5人设置、手机界面、双人完整通关",
+          "逐步回应、任意同值线选择、交换待回应保存和重连"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 33,
+        "row": 4,
+        "column": 4
+      },
+      "playerCounts": [
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "不支持2人"
+      },
+      "ruleSummary": "秘密弱环节身份与 A–E 限制；个人装备锁住；其他玩家可猜身份和限制，错罚一格，正确解锁。",
+      "requiredCapability": "隐藏限制身份；3–5人",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更多未解锁阶段的共享X/Y／探测器、任意时间交换、弱环节无合法值时罚格后回合继续顺序、全红公开豁免及同时任务结束优先顺序需精确原卡／发行商场景核实。",
+        "角色分配中未使用的角色如何选择、猜测前任意时间装备的时序，及弃置牌是否应公开，尚需进一步版别确认；当前限定恰有人数张且含队长角色，弃置不泄露无用身份。",
+        "更多错猜／弃置／额外角色的权威重启、完整整局联机界面、真实Mac Safari及更强身份推理机器人尚待验收；当前公开第34关保持改编，未标为已核实。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": 0,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/33",
+      "developmentModule": "secret-weak-link",
+      "developmentAcceptance": [
+        "新增secret-weak-link开发模块：49线（48蓝／1已知红／无黄），官方拒绝双人；3–5人全部队长8种子，原指定队长保留、含队长角色的唯一角色随机分配、A–E随机唯一秘密限制，只有队长角色持有者须遵守其限制。",
+        "角色背面时个人能力及个人X/Y锁定；本人看到自己的身份、角色和限制，其他玩家角色只显示背面。当前非弱环节可在回合开始独立猜身份和限制，或不猜；只有两要素都正确才公开所有原角色／弃限制／解锁，不能换角色。错猜一次加一格、本回合继续、不能重复猜，末格真实引爆；旧编号／越权／参数错误完全不变。",
+        "弱环节真实开回合无合法值罚两格，然后全队角色及限制弃置，解除限制可继续拆线；弃置角色不公开原身份且不能电池恢复。此无法行动后的回合优先顺序仍需更多来源场景，不把构造后段当完整认证。",
+        "3–5人权威秘密身份／限制／角色只发本人，观战即使选弱环节视角也不获秘密；暂停重启凭据恢复原秘密分配与开始决定。正确猜测全员同步原角色、解除限制、解锁／零罚格，重复命令只处理一次，客户端冒用／旧猜／锁定个人拒绝，专项退出码0。",
+        "3–5人375像素实际三维到二维：本人私有说明、队友角色背面、个人按钮禁用、观战切视角没有秘密或猜测按钮；开始决定刷新恢复，实际猜对两要素后所有客户端角色解锁，无页面异常及溢出，浏览器退出码0。修复三维角色名称直接读取隐藏身份及猜测结果误入剪线宣告导致渲染中断。",
+        "12来源开局推理机器人0胜12败740合法动作206次不猜6次无法遵守后弃置，非法／停止／超限0。3–5人交换其他玩家秘密角色和限制但本人许可视图一致，固定随机源决策一致；不读取队友隐藏身份。机器人目前不做主动身份推断，不认证策略充分。",
+        "75固定原始发牌全信息参考通关：3–5人各25种子，5029合法动作、75次正确猜身份及限制、18次弱环节不猜、229单拆、1544双拆、75主动红线公开，原开局不改，猜对保留原角色。不证明真实身份推理或任意发牌。原第14关设置／角色／权威回归通过；旧版改编34及双人存档不迁移。"
+      ]
+    },
+    {
+      "id": 35,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 34,
+        "row": 4,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "红3，黄4"
+      },
+      "ruleSummary": "每人预分配蓝线最右 X，四根黄线剪完前不得剪 X；装备忽略 X；无对讲机。",
+      "requiredCapability": "X 黄线解锁",
+      "audioRequired": false,
+      "remainingVerification": [
+        "两架时预发X应放哪架／是否由本人选择仍需精确卡或发行商裁定；当前开发默认第一架最右，不把该默认称为双架完整认证。",
+        "四黄未完成而只剩X及红时怎样继续、是否允许仅持锁定X值故意猜错获得线索、咖啡与其他装备在此情形的优先顺序还需核实；当前拒绝会产生无合法配对线的宣告，既不伪造剪X，也不自动免费跳过或引爆。",
+        "黄线解锁底盒13的即时触发、更多额外角色／装备和失败场景、完整联机界面／真实Mac Safari尚待核实验收；公开第35关继续改编，未标为已核实。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "timer": 60,
+          "missing": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/34",
+      "developmentModule": "yellow-before-x",
+      "developmentAcceptance": [
+        "新增yellow-before-x开发模块：原德文卡48蓝／4已知黄／红2候选3，双人红3候选3；先从蓝线中随机每人一根X，放第一架最右，剩余含特殊线重新洗匀按普通架位均分，普通区排序独立；双架整手一X。2–5人全部队长12种子设置、普通架长均分、初始线索不放X通过。",
+        "四根黄线完成前，X不能用作双拆目标／自己的配对线或单拆组成；宣告值须有本人非X配对线。最后黄对仍由队友公开目标，再本人选副本，目标公开但未剪时不能提前解锁；完整两线剪断后公开4/4立即解锁。普通双拆可自由选本人X，最后一对单拆含X可获胜；所有装备仍忽略X，共享及个人对讲机都拒绝且状态不变。",
+        "2–5人权威最后黄对目标阶段暂停重启、本人阶段再重启凭据恢复；只有对应玩家收到副本菜单，观战切视角仍剔除。越权旧回应拒绝、重复一次解锁、所有客户端完整4/4／零罚格；核心及权威专项退出码0，夹具后段不当作整局。",
+        "2–5人375像素实际三维到二维：最后黄对两个回应阶段各刷新恢复、未完成配对仍锁定、4/4全员解锁，随后平面真实双拆队友X及本人匹配线胜局同步、观战无私有操作、零罚格、无异常溢出；浏览器退出码0。首次测试误定位单目标按钮编号属性，修正定位后通过。",
+        "16来源开局推理机器人4胜12败0锁定等待、896合法动作，非法／未识别停止／超限0；保留无可剪线等待判定，不虚构免费跳过或失败。原第20关设置／动作／权威与机器人回归退出码0，旧改编35存档保留原规则。",
+        "100固定原始发牌全信息参考通关：2–5人各25种子，6791合法动作、511单拆、2036双拆、172主动红线公开；优先拆可剪黄线，原开局不改、未用即时底盒，X锁定期间不被剪，引爆器0。非生产推理策略或任意随机发牌保证。"
+      ]
+    },
+    {
+      "id": 36,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 35,
+        "row": 4,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "红2/3，黄4"
+      },
+      "ruleSummary": "五张数字列，队长选一端开始；当前值剪两根移除，行动者可选择另一端；死回合失败。",
+      "requiredCapability": "双端序列",
+      "audioRequired": false,
+      "remainingVerification": [
+        "核实双层底盒即时效果及其与移牌决定的顺序。",
+        "完成官方目录版本整合、兼容性及公网发布验收；实际MacBook Safari仍需复测。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "seq": 4
+        }
+      },
+      "comparison": "公开目录仍为旧改编任务；新官方双端序列只在开发目录测试。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/35",
+      "developmentModule": "number-ends",
+      "developmentAcceptance": [
+        "已检查原始第36关卡正反面及发行商FAQ：48蓝、红1/3、已知黄2，双人红2/3黄4；五张公开随机数字牌，队长先独立选端再放初始信息标记。",
+        "2–5人全部队长、来源设置、私有端点选项、拒绝回滚、双视角合法值及初始顺序通过；成功剪当前值两根或四根后移除一张数字牌，行动者选择下一端；无法遵守的回合立即失败。",
+        "16局基础角色机器人合法终局；现有基础、实体与任务模块回归通过。尚未声称官方发布或任意来源发牌可通关。",
+        "隔离本机2–5名独立Chromium客户端、375像素手机二维／三维通过：队长先选端再标记、真实双人拆线移牌、仅行动者的端点选项及刷新后选择右端继续。修复数值按钮渲染时的未定义变量，重跑退出码0，无网页异常；尚未测试整局或实际MacBook Safari。",
+        "失败不移牌、一次单拆四根只移一牌、双重探测器、X/Y双值限制、稳定器失败免推进及交换后被锁立即失败通过。修复初始序列选择阶段不能暂停的问题。",
+        "2–5人权威服务端覆盖初始与剪线后选端的暂停、重连、服务器重启、私人视图、冒充拒绝、旧决定拒绝及重启后的请求去重。",
+        "100局来源配置全信息参考求解通关，共7365个合法动作；此为可达性验证，机器人仍只使用私人许可视角。",
+        "扩展真实浏览器检查通过2–5人初始阶段房主暂停／继续、端点选择、双视图、刷新恢复；双人参考操作经网页按钮完整通关，进程退出码0，无网页异常。",
+        "三重／超级探测器的私人命中选择与移牌、X/Y命中非序列值不移牌、非回合雷达／电池／倒带器不换回合、咖啡杯指定被锁玩家立即失败通过；扩展核心测试退出码0。",
+        "16局第三盒新角色组合机器人合法终局，与16局基础角色合计32局；没有缺少动作或重复拒绝。"
+      ]
+    },
+    {
+      "id": 37,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 36,
+        "row": 4,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "共享限制牌；每完整剪四根同值蓝线换牌；全队都不能行动时罚一格换牌；公开红线例外。",
+      "requiredCapability": "自动限制切换",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          4,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "turns": 6
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/36"
+    },
+    {
+      "id": 38,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 37,
+        "row": 4,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "队长一根线朝外本人不可见放右侧；只能队长主动拆，不能装备，拆错爆炸；其他人不能选择它。",
+      "requiredCapability": "隐藏自身线、可见性",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "contentVersion": 13,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          2
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "每人一枚蓝色标记，朝外线不可标记",
+        "detonatorAdjustment": 0,
+        "officialModule": "captain-outward-wire"
+      },
+      "comparison": "来源设置、视角隐私、盲猜双人／单人、红线公开、错误爆炸、强制跳过、装备限制、机器人和手机双视图已通过验收；统一战役采用官方模块。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/37",
+      "developmentModule": "captain-outward-wire",
+      "developmentAcceptance": [
+        "2–5人全部队长位置、48蓝、2根已知红（双人3红）、无黄；队长最后收到的一根朝外，保留原架并放最右侧，不参与排序。每架普通区排序、架长均衡、角色可用。",
+        "队长视图不含朝外数值，其他玩家可见；队长不能初始标记此线，普通目标和任何共享／个人装备不能影响它。普通数值宣告不能把自己未知线当作已知手牌验证真值。",
+        "共用压缩包隐藏朝外数值，再用其他玩家的私人包传递；队长的私人包不含该值，伪造私人包不能在解包时覆盖可见权限。已剪或游戏结束才向队长公开。",
+        "队长的机器人推理把自己的未知朝外线作为独立概率空档；保持允许视图相同、交换底层秘密真值时，在相同随机采样下概率结果完全相同。",
+        "权威服务端2–5人检查队长／队友／观战公共和指定视角、身份冒用拒绝、重连和重启，不泄露队长真值。",
+        "隔离本机2–5名独立Chromium客户端、375像素手机二维／三维的朝外标记、可见数值、禁止点击及刷新隐私检查通过。未声称盲猜动作或整局验收完成；实际MacBook Safari未复测。",
+        "双人盲猜可宣告不在已知手牌中的蓝值；目标公开回应后，队长确认朝外线。确认选项不验证其真值；目标或自己不匹配立即爆炸，不推进引爆器、不加错误线索。",
+        "普通无装备双人成功后也可选择朝外线，始终提供同一未知选项，猜错爆炸；探测器、X/Y或稳定器参与时不能选择它。单拆可用已知三根加朝外线，或已知一根加朝外线且另一对已剪；错误猜测真正结算失败，不软拒绝。",
+        "只剩朝外线与已知红线时可以宣告朝外线为红色，若非红立即爆炸；其余非红未处理时不允许公开。队友只有朝外配对时须跳过并罚一格，按公开已剪数量、本人的手牌及可见朝外线判定；个人探测器不能绕过。",
+        "对讲机不能移走朝外线，队长没有其他可交换线时发起请求拒绝且不耗牌，避免无法回应。队长只剩朝外线与红线时不能预开稳定器。已剪朝外线仍不作普通排序边界。",
+        "100局来源设置全信息通关，共6658个合法动作；64局基础角色和32局后期角色推理机器人合法终局。权威服务端2–5人盲猜待确认的隐私、暂停、重连、重启、过期拒绝和去重通过。",
+        "隔离本机2–5名Chromium客户端、375像素手机二维／三维盲猜宣告、队友回应、始终相同的朝外确认及刷新恢复通过；双人实际界面完整通关，各人数错误盲猜自己的线立即爆炸。单拆、红线公开和强制跳过的浏览器验收尚待补齐。",
+        "2–5人36个额外来源浏览器场景通过：单拆四根／最后两根、错误单拆、红线正确／错误、强制跳过、普通成功后选择朝外线正确／错误、预开稳定器后盲猜错误。双人最后两根的状态通过合法对讲机交换与普通拆线到达，没有伪造发牌或已剪数量。",
+        "目标正确但自己的朝外线错误时，保留队友的命中回应，分别说明朝外拆线失败；目标确认后向全员翻开实际数值，尚未剪断或解锁，队长的朝外值仍隐藏。",
+        "已经启用的稳定器不会保护盲猜，也不会阻断后续行动；参数无效时不撤销保护。异常参数在纯引擎中完整回滚，不半耗角色或留下错误决定。",
+        "三重的两根例外按线架实际未剪数量判断；朝外线不能选择，但仍计数。X任务明确忽略X，按其特定规则处理。"
+      ]
+    },
+    {
+      "id": 39,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 38,
+        "row": 4,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "红3，黄4"
+      },
+      "ruleSummary": "无装备；随机初始线索；九数字牌每轮弃一，特殊一次拆四根成功后分余牌增加线索。",
+      "requiredCapability": "四目标拆线、数字奖励",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          4,
+          4
+        ],
+        "equipment": 0,
+        "personalDoubleDetector": true,
+        "initialInfo": "random",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {},
+        "officialModule": "precision-number-rewards",
+        "contentVersion": 15
+      },
+      "comparison": "官方第39关加入版本15，奖励牌背面分发并仅向各持有者发送；原改编存档保留保存时规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/38",
+      "developmentModule": "precision-number-rewards",
+      "developmentAcceptance": [
+        "原卡正反：48蓝、黄4已知、红2/3，双人红3已知；九张随机数字牌先公开一张，无共享装备，每人随机蓝色初始信息标记。",
+        "复用四线公开宣告与私人回应；成功前每整轮仅弃一隐藏数字牌，成功后剩余牌从队长顺时针分发并逐人摆放奖励。牌堆只发数量，顺序不发。",
+        "奖励没有对应未剪蓝线时按FAQ忽略，不旁置；没有备用标记直接忽略，不生成口头替代。两枚同值标记可占同一线，分别保存身份与数量，剪断释放。该边界仍需进一步核实与发布验收。",
+        "2–5人全部队长核心设置、隐私、有限供给、拒绝回滚、旧决定、整轮弃一及剩余七张分发通过；100局来源配置全信息参考求解通关，共7097个四线宣告后合法动作；16局基础角色机器人合法终局。",
+        "隔离本机2–5人375像素手机二维／三维随机开局、四线公共箭头、私人回应、奖励选择、暂停及刷新恢复通过；双人真实网页完整通关，各人数错误四线立即爆炸且不剪任何选中线，退出码0，无网页异常。实际MacBook Safari未复测。",
+        "修复同线双枚标记被后续失败线索覆盖的库存记录问题；再次猜错后保留两枚身份与数量，剪断才释放。扩展第39关与实体规则测试通过。",
+        "完整回归退出码0，两份目录各528局推理模拟无拒绝错误或停住；最后的双枚覆盖修正另作第39关与实体规则针对性重跑通过。",
+        "原始法语背面明确奖励牌背面分发；发行商FAQ确认奖励缺值忽略。修复完整奖励牌表公开的问题，只发各人的牌值与公共数量。",
+        "2–5人随机初始、四线及逐奖励的权威暂停、重连、重启、私人选项、观战只读、冒充／过期拒绝与请求去重通过。16局第三盒新角色合法终局，与基础角色合计32局。",
+        "来源合法同线双枚奖励在375像素手机二维／三维显示两枚标记并完整通关。奖励牌私有视图修正后再跑2–5人浏览器成功／失败均通过，双人完整通关。",
+        "版本15发布验收：完整回归两目录各528局无错误／停住；13200局两目录参考求解无失败；旧版本14改编存档兼容性通过。公网HTTPS/WSS2–5人通过私有奖励牌、逐项摆放、暂停重连与双人完整通关，反馈脱敏修正后重跑全部人数通过。"
+      ]
+    },
+    {
+      "id": 40,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 39,
+        "row": 4,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "队长无初始线索"
+      },
+      "ruleSummary": "依玩家座位交替使用频率和奇偶标记，整局持续；黄红不用此标记。",
+      "requiredCapability": "混合线索类型",
+      "audioRequired": false,
+      "remainingVerification": [
+        "核对对讲机交换后未移动的频率标记如何继续解释，以及机器人应使用放置时还是当前线架的计数；不自行给其余标记增加或修改信息。",
+        "频率交换语义核实后，完成官方目录整合、版本与兼容性检查和公网发布验收。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": -1,
+        "ruleFlags": {}
+      },
+      "comparison": "公开第40关仍使用改编规则。开发模块已实现座位交替类型、初始和失败线索、已剪蓝线便利贴、交换线标记丢弃及有限供应；频率交换后的剩余标记语义仍待核对。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/39",
+      "developmentModule": "mixed-clues",
+      "developmentAcceptance": [
+        "2–5人全部队长位置：48蓝、3根已知红、无黄；队长起顺时针第1/3/5位频率、第2/4位奇偶，整局固定；双人队长无初始标记。",
+        "初始、失败和便利贴按所属玩家类型；频率同架计数包含已剪，不合并两架，四根用两个×2。两种玩家均可给已剪蓝线放便利贴，红线拒绝且不耗牌。",
+        "对讲机交换的两根导线附着标记均丢弃，类型不随导线移动；角色及视图的类型公开固定，私人选择不发送给其他人。",
+        "100局来源配置全信息通关，共6620个合法动作；64局基础角色机器人合法终局。2–5人权威服务端私有响应、暂停、重连、重启、过期拒绝与重复请求去重通过。",
+        "隔离本机2–5名独立Chromium客户端、375像素手机二维／三维检查两种信息类型、两类便利贴标已剪蓝线及刷新恢复通过。实际MacBook Safari未复测。",
+        "新增隔离本机2–5人手机浏览器：公开猜测箭头、目标否认、按目标所属类型放失败标记、引爆器推进；双人两组真实网页完整通关。测试进程退出码0，无网页异常。",
+        "2–5人非当前回合使用共享对讲机、队友回应前刷新、原决定继续、交换线标记丢弃、保留双方原线架并重排、固定信息类型及共享卡只用一次通过；两组双人局交换后完整通关，无网页异常，进程退出码0。"
+      ]
+    },
+    {
+      "id": 41,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 40,
+        "row": 5,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "countByPlayers": {
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 4
+          },
+          "candidates": "known"
+        },
+        "twoPlayerAdjustment": "红2/3，黄2"
+      },
+      "ruleSummary": "每人一黄，五人队长无黄；随机线索；特殊单拆别人一黄，正确引爆器退一格；固定橙色空格起点。",
+      "requiredCapability": "绊线单拆、特殊引爆器",
+      "audioRequired": false,
+      "remainingVerification": [],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          3
+        ],
+        "yellow": "按人数2/3/4/4已知",
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "random",
+        "detonatorAdjustment": "固定橙色空格起点",
+        "ruleFlags": {},
+        "officialModule": "tripwire",
+        "contentVersion": 16
+      },
+      "comparison": "第41关加入版本16，按原始法／德任务卡执行；旧版本15改编存档保留原规则。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/40",
+      "developmentModule": "tripwire",
+      "developmentAcceptance": [
+        "原始法语及德语正反卡：48蓝、每人一黄（五人队长不分黄），红1/3；双人黄2、红2/3。排除底盒，随机信息标记，固定橙色空格起点。",
+        "2–5人全部队长设置、架数、均衡与排序、初始黄标记及五人队长旁置黄标记通过。普通双人／单人拆黄禁止，特殊行动只处理队友单根黄线，成功退一格且不处理自己导线。",
+        "首错蓝线引爆、非致命蓝失败真实线索、选红立即爆炸、轨道最早界限、稳定器不保护特殊行动、畸形目标与旧回应不改状态通过。",
+        "100局来源配置全信息参考求解完整通关，共6908个开局后合法动作；基础角色机器人合法胜／败或等待状态检查通过。",
+        "修复机器人公开分组约束下全零采样：构造符合公开计数、排序与标记的初始样本，枚举可用红线组合，采样保持初始每人一黄约束；相同许可视图但不同真实隐藏值产生相同推理结果。",
+        "2–5人权威随机初始及黄／红回应的暂停、重连、重启、私人选项、观战只读、冒充／过期／畸形目标拒绝及请求去重通过。",
+        "隔离本机2–5人375像素手机双视图、随机初始、固定起点、公开箭头、私人回应、暂停刷新、成功退格／首错蓝引爆／选红爆炸通过，双人完整通关。",
+        "全员需跳过时保持等待，随时装备仍可用；双向秘密交换能恢复红线队员行动，该队员不需蓝线也能处理绊线。来源合法2–5人手机双视图交换及刷新场景全部完整通关；服务器机器人交换中暂停、重启后自行继续并通关。",
+        "16局新角色组合没有重复拒绝；2–5人旧版本15存档保持原改编规则、黄红设置与引爆器。",
+        "版本16发布验收完成：修复偶发零样本，24组确定性初始化及最新完整回归通过，两份目录各528局无错误／停住；13200局参考求解无失败；机器人救援服务恢复重跑通过；真实公网HTTPS/WSS2–5人通过，双人完整通关。"
+      ]
+    },
+    {
+      "id": 42,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 41,
+        "row": 5,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "依据发行商录音；完整时间线必须单独核对。",
+      "requiredCapability": "音频时间线",
+      "audioRequired": true,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试",
+        "Exact audio signal/sound cues and synchronized pause/reconnect behavior"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": false,
+        "initialInfo": "none",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/41"
+    },
+    {
+      "id": 43,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "implemented-mission",
+      "completeVerification": true,
+      "sourceSlot": {
+        "index": 42,
+        "row": 5,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "队长随机初始线索"
+      },
+      "ruleSummary": "纳米机器人从1往返；每回合后移动；拆中所在数值从备用线补一根；备用线 2人5、3–4人4、5人3；备用为空才赢。",
+      "requiredCapability": "机器人、备用补线",
+      "audioRequired": false,
+      "remainingVerification": [
+        "继续改善新角色机器人策略；法／德来源扫描具体印次未知，不保证任意发牌必胜。"
+      ],
+      "currentProgram": {
+        "ruleset": "physical",
+        "verified": true,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          0,
+          0
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "2人队长随机蓝，其余正常选择",
+        "detonatorAdjustment": 0,
+        "officialModule": "nano-robot",
+        "contentVersion": 17
+      },
+      "comparison": "版本17正式发布：官方机器人规则；旧版本16存档保持原改编任务。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/42",
+      "developmentModule": "nano-robot",
+      "developmentAcceptance": [
+        "法／德原始正反卡：48蓝、3已知红、无黄，机器人从1开始往返；隐藏备用2人5根、3–4人4根、5人3根。双人队长随机蓝色初始标记，另一人正常选标记。",
+        "法语背面明确行动者拆中所在数字后取一根，双人／四根单拆均只取一次；双架本人选择放置，单架自动放置。咖啡杯也推动机器人，不跳过已完成数字。",
+        "2–5人全部队长来源设置、全51根守恒、均衡架数与排序、只发布备用数量、禁止直接剪备用及普通失败不补线通过。备用未清空不能提前获胜。",
+        "私人两架选择可序列化恢复，旧决定／错误架／冒充不改状态。内容只给接收者，未放置的导线不发布身份；放置后只给该玩家手牌值。",
+        "机器人推理按公开备用数量构建匿名槽位，不读取真实备用值；相同许可视图但不同备用真值推理相同，匿名槽位与真实备用ID均不成为可剪目标。",
+        "隔离本机2–5人375像素手机双视图通过：公开机器人位置与数量、实际命中补线、内容隐私、双架刷新选择／单架自动放置及按数值排序，无页面异常，退出码0。",
+        "完整回归退出码0，两份目录各528局推理模拟无错误或停住；未据此认证第43关整局或正式发布。",
+        "100局完整来源参考求解通过，覆盖2–5人及25个种子，共6456次动作，全部清空备用并获胜；完整牌面参考策略不证明任意发牌或推理机器人必胜。",
+        "权威2–5人补线阶段的暂停、凭据重连、服务重启、旧选择／冒充／错误线架拒绝与重复命令去重通过。观战接收者视角不接收临时补线值。",
+        "机器人优先公开安全当前位置补线，16局实际推理无非法动作或重复循环，3胜、12引爆、1无合法动作等待，未自动发线或跳过数字。",
+        "新增共享三重／超级探测器、便利贴、备用电池、稳定器组合与咖啡杯公开安全补线决策；个人三重及个人／共享X/Y第二值补线状态独立。四类新角色32局无非法动作或循环但全部引爆。2／3人服务器补线选架暂停／重启后自行完成并公开最后红线获胜（终局场景）。",
+        "版本17完整回归及两目录13200局来源参考求解通过，旧版本16存档保持原规则；真实公网2–5人手机双视图、公开目标／回应与私人补线通过，双人暂停重连并完整通关，已正式发布。",
+        "重新核对发行商2025-08 FAQ后修复：无法拆线的唯一同值只在机器人单线局面应爆炸，不等待；旧等待存档恢复修订只增一次，其他合法补线路径仍可通关。"
+      ]
+    },
+    {
+      "id": 44,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 43,
+        "row": 5,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "共享氧气人数乘二；蓝1–4／5–8／9–12耗1／2／3；队长回合补满；跳过罚一格，发行商FAQ允许稳定器保护；水下禁语只许可示意氧气。",
+      "requiredCapability": "共享氧气、全局资源",
+      "audioRequired": false,
+      "remainingVerification": [
+        "水下正式拆线宣告／装备回应与空手队长专项裁定仍需核对。",
+        "正式目录、完整回归及真实公网发布验收。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "silent": true,
+          "seq": 3
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/43",
+      "developmentModule": "shared-oxygen",
+      "developmentAcceptance": [
+        "德文原卡确认49根、1／3红、无黄、人数×2共享氧气；排除共享10和个人X/Y。正常初始蓝标记。",
+        "核心2–5人全部队长设置、1／4／5／8／9／12耗氧边界、四根单拆只耗一次、双拆私人回应与保存恢复不重复扣除通过。",
+        "无效与氧气不足动作完全不变、失败仍耗氧、实际队长回合开始补满、主动跳过及精确引爆边界通过。",
+        "发行商当前法语FAQ允许用稳定器保护跳过，优先于德文卡不允许的措辞；预先使用与同步选择均测试，未解锁或已用卡拒绝。拇指请求与公开红线不耗氧。",
+        "共享氧气显示、拇指请求与主动跳过控制已实现但未浏览器验收；机器人氧气不足时合法跳过并使用稳定器，零氧气仍公开红线，核心专项通过。",
+        "2–5人权威扣氧去重、暂停／凭据重连／服务重启、过期决定／修订／冒充拒绝、私有选择与观战只读、禁语与固定请求氧气通过；手机双视图及观众、缺氧数字与真实四根单拆禁用、稳定器跳过和队长补满通过。",
+        "法语图集44位于逆序第22格，已检查正反面，与德文设置、氧气费用、队长回合开始恢复一致；两种X/Y均排除。",
+        "100局实际来源发牌完整参考求解通过：6560次合法动作、16次主动跳过、9次避免队长提前清空风险；备用／补氧规则未变。这是完整牌面策略，不证明真人或机器人能力。",
+        "按发行商基础规则第7页，空手玩家被跳过且不行动；继承此规则时经过空手队长座位不自动补氧。已加当前规则组合的回归；44卡没有提供明确的空手队长例外，仍待专项裁定核对。",
+        "允许角色32局实际推理无非法动作、停住或循环，5胜／27引爆；2–5人49根终局场景的服务机器人耗氧后私人回应暂停／重启恢复，双人自行稳定器跳过与队长补满后公开红线获胜。终局场景不等于完整开局通关。",
+        "2–5人旧版本17改编存档保留顺序引信、失败无信息、黄红设置和引爆器，不添加共享氧气。"
+      ]
+    },
+    {
+      "id": 45,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 44,
+        "row": 5,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "每回合队长翻数字，首位认领者拆该值；无人认领由队长指定；被指定缺值者放线索并罚一格；错误认领或额外暗示罚一格；仅剩红线可认领公开。完成值退牌、空堆重洗；排除共享10／11与个人X/Y。",
+      "requiredCapability": "数字抢回合、指定处罚",
+      "audioRequired": false,
+      "remainingVerification": [
+        "核对错误认领后的数字处理、被指定仅剩红线例外、已认领／回应阶段红线随时认领的优先级及交换后认领数字变化。",
+        "完整特殊例外验收、正式目录与公网发布。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "silent": true,
+          "noChat": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/44",
+      "developmentModule": "number-claim",
+      "developmentAcceptance": [
+        "法／德原卡：48蓝、2已知红，双人3红；12张数字背面洗混。排除共享X/Y与咖啡杯、个人X/Y。原卡不支持旧核对摘要“只能谈当前值”，已纠正。",
+        "2–5人全部队长设置、隐藏数字牌表／顺序、有效首个认领、过期／冒用拒绝且不变、当前数字限制与正常双拆双方私人选线通过。",
+        "队长指定缺值者的私人线索选择可保存恢复，放标记后罚一格；明确的处罚引爆边界、认领红线及完成数字退场通过。错误认领保持本卡与被指定红线-only等后续流程为开发暂定，未据此核实。",
+        "2–5人权威同修订双认领仅首个成功且后到者不罚；认领结果、私人双拆及缺值线索暂停／凭据重连／服务重启、重复／过期／冒用拒绝、观战切换视角只读与牌堆隐藏通过。",
+        "375像素2–5人手机双视图翻牌、认领、当前数字限制、公开目标、私人双拆、指定缺值线索暂停刷新重连与罚格通过。机器人与完整任务仍未验收。",
+        "32局允许角色真实推理3胜／29引爆，无非法动作、停住或循环。机器人认领只用本人手牌，队长指定只用公开信息，隐藏队友牌值改变不影响该决定；交换策略保留最后一根当前数字。",
+        "服务端扫描全部可认领机器人；2–5人暂停／重启的实际发牌终局场景，空手队长之外的机器人自行认领并获胜。混合真人认领取消机器人待执行指定，无抢回行动权或罚格；仅终局恢复证明。",
+        "100局2–5人完整来源参考路径全部获胜，11726动作、177次红线公开；仅正常有效认领，不验证仍待裁定例外。",
+        "空堆重洗唯一性与蓝线退场后的红线收尾；有限标记耗尽不复制第三枚，临时线索恢复、拒绝保留与下一接受动作后清除通过。",
+        "额外暗示报告可在私人回应／线索阶段记录，非致命保留决定、致命取消；手机双视图重跑通过。错误数字显示当前数字牌要求。",
+        "旧版本17存档2–5人保留原改编任务、黄红配置、顺序与引爆器，不添加数字抢认。",
+        "翻牌前仅剩红线认领与公开通过：不抽／弃数字、无罚格，普通蓝线仍先翻牌；界面已接入但此路径专项浏览器待复测，其他已认领或回应期间的红线优先级不据此裁定。",
+        "number-claim-red.browser.js在2–5人真实发牌经合法参考行动得到的晚局、375像素双视图通过非队长翻牌前认领公开红线，牌堆不变、无罚格。"
+      ]
+    },
+    {
+      "id": 46,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 45,
+        "row": 5,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 0,
+          "candidates": 0
+        },
+        "yellow": {
+          "count": 4,
+          "candidates": 4,
+          "values": [
+            5.1,
+            6.1,
+            7.1,
+            8.1
+          ]
+        },
+        "twoPlayerAdjustment": "队长无初始线索"
+      },
+      "ruleSummary": "固定四黄与本人回合开始仅剩7的许可四线；德文允许按特殊触发，法语另写四7最后拆，版本差异未裁定。",
+      "requiredCapability": "特殊蓝7行动",
+      "audioRequired": false,
+      "remainingVerification": [
+        "德／法四7最后拆与特殊触发优先级，双层底盒即时效果与随时交换后的许可条件。",
+        "特殊例外与正式发布验收。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "parity",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "timer": 50
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/45",
+      "developmentModule": "agent-seven",
+      "developmentAcceptance": [
+        "德文正反卡直接核对，纠正旧摘要“蓝7必须最后拆”的全局误解；条件针对当前玩家回合开始的本人手牌。",
+        "2–5人全部队长52根、固定四黄、无红、排除电池、双人队长无初始线索通过；固定黄值在全局洗牌前加入，未按已发牌的公开ID覆盖。",
+        "提前普通拆7拒绝且不变，当前玩家两架合并仅剩7可许可四线，其他玩家仍有蓝／黄线时成功；保存恢复、私人回应、选错立即爆炸、普通猜错碰到7按正常失败、成功不提前解锁其他装备通过。",
+        "界面与机器人已按私有许可资格限制特殊行动，尚未进行46专属浏览器／机器人整局验收。",
+        "当前德文解释100局完整来源参考获胜，6840动作，其中58局其他线未完成时许可；明确不据此裁定法语最后拆措辞，暂不公开。",
+        "52根实际发牌经合法参考行动到许可阶段，2–5人权威逐个回应暂停／凭据重连／重启、私人资格／答案、观战切换只读、过期／冒用／重复拒绝及完成恢复通过。",
+        "2–5人＋观众375像素手机双视图资格、四目标箭头、逐人私人回应、暂停刷新重连、观战只读与四7成功通过。仅当前德文开发解释，不裁定版本差异。",
+        "当前开发解释32局允许角色真实推理13胜／19引爆，无非法动作、停住或循环；不据此裁定版本差异。",
+        "2–5人旧版本17改编存档保持原规则、黄红设置与引爆器，不加入固定黄或许可。",
+        "2–5人来源许可场景的服务机器人四目标已正确选择后，私人逐人回应暂停／重启自行完成，零罚格；中途尚有线则立即暂停取消后续计时器。只恢复场景，不是开局整局证明。"
+      ]
+    },
+    {
+      "id": 47,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 46,
+        "row": 5,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "两张数字的和或差作为宣告值并弃牌；耗尽重置；跳过弃两牌罚一格；禁 X/Y。",
+      "requiredCapability": "数字算术牌",
+      "audioRequired": false,
+      "remainingVerification": [
+        "算式弃牌宣告／结算时机及咖啡杯与跳过处罚具体关系仍需核对。",
+        "机器人策略充分性、特殊例外及正式发布验收。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {
+          "missing": true,
+          "hide": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/46",
+      "developmentModule": "number-arithmetic",
+      "developmentAcceptance": [
+        "法／德正反卡交叉核对：48蓝、2／3红，双人3已知红，无黄；公开12数字，排除共享及个人X/Y。",
+        "2–5人全部队长设置，3+9=12、10与3差7及顺序对调、差1、双拆／四根单拆一次弃两张，通过。错误算式、重复牌、已弃牌、错误目标、错玩家均拒绝且状态不变。",
+        "当前开发实现宣告时保留／弃牌，回应不重复消耗，保存恢复通过；失败仍耗牌，耗尽在回合结束复原12张，弃牌跳过罚一格，红线公开不耗牌。宣告弃牌时机与咖啡杯例外尚待核。",
+        "2–5人权威错算式拒绝、一次弃牌、目标／本人阶段暂停／凭据重连／服务重启、私人选择／观战只读、旧修订／冒用／已弃牌拒绝、重复跳过不重罚通过。",
+        "375像素2–5人＋观众手机双视图选两牌、和差及结果提交限制、实际弃牌、私人回应暂停刷新、观战只读、下一玩家弃牌跳过通过。数字计算仅附加拆线操作，未用于其他装备动作。",
+        "机器人拆线附合法和／差、只以公开数字与已剪计数保留组合、无法组成自有值时合法弃牌跳过，私人回应和其他装备不附算式。32局全部引爆但无非法动作或循环；本人同许可视图隐藏队友牌改变不影响选牌。",
+        "2–5人实际发牌50／51根恢复场景，最后两张牌宣告后私人回应暂停／重启，牌堆只复原一次，再合法算式获胜零罚格。不代表从开局整局通关。",
+        "100个2–5人来源发牌有界搜索找到合法获胜路径，133次策略尝试、最大索引6、获胜路径6802动作。固定同一发牌只改变合法选牌策略，完整手牌信息仅测试使用，不证明机器人或任意发牌必胜。",
+        "2–5人旧版本17存档保留原改编任务、黄红设置和引爆器，不添加算式规则。"
+      ]
+    },
+    {
+      "id": 48,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 47,
+        "row": 5,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 3,
+          "candidates": 3
+        },
+        "twoPlayerAdjustment": "红3，黄3，队长两黄分两架"
+      },
+      "ruleSummary": "三黄预分配，双人队长两黄分两架；特殊同时选三黄，4–5人无黄也可发起。失败德文标错线、法文标所有选中线，皆罚一格，版本差异未裁定。",
+      "requiredCapability": "三黄特殊行动",
+      "audioRequired": false,
+      "remainingVerification": [
+        "法／德失败线索差异、红线目标与特殊修饰例外、底盒即时效果及预发黄线的个人线架选择。",
+        "机器人策略充分性、正式公网整局、失败及红线浏览器提示、真实Safari验收、正式发布与进度版本；基础界面／权威／恢复／合法动作／参考路径已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "turns": 5,
+          "countdown": 8
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/47",
+      "developmentModule": "yellow-three",
+      "developmentAcceptance": [
+        "法／德原卡共同设置：48蓝、3已知黄、2已知红，双人3红；从队长顺时针先发三黄，双人队长两架各黄。",
+        "2–5人全部队长53／54根、三黄所有者、两架黄分配、均衡排序、正常初始线索通过；其他两架持有者的黄线架开发随机分配，未据此核实。",
+        "当前德文分支一次三黄成功、普通黄拆拒绝、跨玩家私人回应保存恢复、错线提供信息且总共罚一格、4–5人无黄发起通过。红线按基础规则引爆与禁止组合修饰为开发解释，仍待专项核对。",
+        "权威2–5人各回应暂停／重启／凭据重连、私人答案／观战只读、防冒用／过期／重复；一次失败罚格保存恢复。",
+        "2–5人375像素手机二维／三维公开三线箭头、私人逐人回应与重连成功；正式公网整局未验收。",
+        "机器人特殊发起／回应只使用本人手牌与公开信息；隐藏值变更不改变后段选择。40局五种角色15胜25败、非法／停止／超限为0；策略充分性未完成。",
+        "100局来源全信息参考完整获胜6960动作，不裁定失败版本差异、红线、修饰与底盒时机。"
+      ]
+    },
+    {
+      "id": 49,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 48,
+        "row": 5,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "个人氧气2/3/4/5人分别7/6/5/4；耗宣告值转给一名队友；跳过罚一格，红线公开免费；禁 X/Y。",
+      "requiredCapability": "个人氧气转移",
+      "audioRequired": false,
+      "remainingVerification": [
+        "法德背面省略差异、向空手玩家转交后立即弃氧的开发解释、水下雷达及特殊回应、底盒即时效果和额外装备交互需核对。",
+        "机器人策略充分性、特殊装备浏览器／失败与空手弃氧交互、真实Mac Safari、正式公网整局／发布及进度版本尚未完成；合法策略／来源完整参考／后段权威恢复和基础手机双视图已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": 6,
+        "personalDoubleDetector": false,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 0,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/48",
+      "developmentModule": "personal-oxygen",
+      "developmentAcceptance": [
+        "法德来源共同50／51根、红2／3已知、无黄、各7／6／5／4枚公开氧气、禁共享／个人X/Y与聊天，2–5人全部队长正常初始通过。",
+        "双拆／四线单拆／双重／共享三重／超级／个人三重各次仅转移宣告蓝值一次；接收者不必是目标，私人回应及恢复不重复收费。",
+        "拒绝动作完整不变；当前德文主动跳过、稳定器保护、免费红线与空手弃氧守恒；向空手队友转移立即弃氧属于待核开发解释。",
+        "2–5人权威来源双拆各阶段暂停／重启／凭据重连、过期／冒用／重复拒绝，费用不重复；版本17旧改编存档保持原规则。",
+        "界面个人氧气公开、拆线前接收队友选择、费用不足禁用、拇指请求／禁聊天；2–5人375像素二维／三维与观战公开箭头／私人回应重连浏览器通过，非公网整局或Mac Safari验收。",
+        "机器人依据本人手牌、公开氧气余额／请求／当前线索自选收款，费用不足合法跳过；四种允许角色32局2胜30败、409次转移46次跳过，非法／停止／超限0且存档／守恒通过，策略充分性未验证。",
+        "100局固定来源发牌334次有限策略尝试全部找到完整获胜路径，6751动作104次跳过，守恒；参考使用完整手牌，不用于生产或裁定规则差异。",
+        "2–5人来源蓝2后段服务器暂停／重启后机器人自主转移、双方选线并零罚格获胜，最终弃氧守恒；非开局整局联机证明。"
+      ]
+    },
+    {
+      "id": 50,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 49,
+        "row": 5,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "红3，黄4"
+      },
+      "ruleSummary": "记忆任务；无候选标记、无完成标记；初始及失败线索短暂指出位置后放旁边；不能回顾旧线索。",
+      "requiredCapability": "记忆可见性",
+      "audioRequired": false,
+      "remainingVerification": [
+        "开发指线持续到下一有效行动、旁置标记按原导线已剪回收的规则解释，以及装备附加信息与旁置互动仍需核对。",
+        "机器人策略充分性、更多装备例外／权威失败重启、真实Mac Safari、正式公网完整关卡与发布／进度版本未完成；私有记忆／合法动作／完整参考／后段恢复与基本手机双视图已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          3,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "fog": true,
+          "seq": 2
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/49",
+      "developmentModule": "memory-sea",
+      "developmentAcceptance": [
+        "法德来源主要规则一致：52／55根、红2／3黄2／4全已知，先记数值，移除候选与完成标记，正常装备。",
+        "2–5人全部队长：逐人预览／隐藏手牌／确认后隐藏候选，普通初始旁置、当前一次指线，不公开旧线索位置。",
+        "猜错旁置不留永久位置信息，下一有效行动消除指线；无效操作保持状态，有限标记和口头回退，装备便利贴正常。",
+        "权威每次确认暂停／服务重启／凭据重连、冒用／旧编号／重复拒绝，观战同步隐藏、初始提示恢复；版本17旧改编存档兼容。",
+        "界面预览确认、旁置与当前公共箭头、候选木标记／完成颜色／进度圆点移除；2–5人375像素二维／三维／观战只读及重连浏览器通过，普通第2关WebKit触控回归通过，非实际Mac Safari或正式公网整局。",
+        "机器人仅记已看过的红黄／公开指线，私有记忆保存恢复、不进玩家／观战／公共包；排序变化不沿用旧位置；隐藏值／内部候选更改推理一致，无效动作不变。",
+        "五种角色40局13胜27败、232次公开指线观察，非法／停止／超限0及过程恢复；100局来源完整参考获胜7281动作，不认证策略充分性和源例外。",
+        "2–5人来源四根蓝2后段服务器暂停／重启，机器人私有记忆原样恢复、双方选线并零罚格获胜，观战不接收记忆／私人选择；非开局整局证明。"
+      ]
+    },
+    {
+      "id": 51,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 50,
+        "row": 6,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2，队长无初始线索"
+      },
+      "ruleSummary": "引爆器起点比通常早一格；轮值长官翻数字并独立指定玩家（可自己）拆该值，回应后执行；缺值标记罚一格。下一长官从原长官左邻继续；回合开始红线独留不翻牌，被指定只剩红线按FAQ立即引爆，禁X/Y。",
+      "requiredCapability": "指定行动者、额外初始容错",
+      "audioRequired": false,
+      "remainingVerification": [
+        "咖啡杯改变下一长官、长官空手／非回合装备影响命令等精确例外、5人起点之外最早倒带范围仍需核对。",
+        "机器人策略充分性、更多装备交互浏览器、真实Mac Safari、正式公网整局／发布与进度版本未完成；合法机器人／完整参考／后段服务器恢复、权威每阶段防重及基本手机双视图已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": -1,
+        "ruleFlags": {
+          "timer": 45
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/50",
+      "developmentModule": "number-order",
+      "developmentAcceptance": [
+        "法德正反及发行商FAQ交叉核对，修正原摘要误写不能指定自己／红线独留只有普通失败。",
+        "2–5人全部队长49／50根、红1／2已知、无黄、初始－1／第人数＋1次失误引爆、禁X/Y、双人队长无初始通过。",
+        "指定自己／别人、遵命回应、双方私有选线、原长官左邻接班、缺值私有标记罚格、红线独留指定FAQ立即爆炸、红线长官不翻牌、数字退场、拒绝完整不变通过。",
+        "权威2–5人来源翻牌／指定／回应／双方选线／缺值标记各阶段暂停、凭据重连、服务重启、防冒用／过期／旧修订／重复；重复手牌自选、原长官顺序、缺值一次罚格。",
+        "观战切换手牌视角不获得私人选择／不可行动，隐藏牌堆不传客户端。",
+        "界面长官阶段／独立指定／遵命回应／缺值标记及指定数字限制和操作提醒已实现，语法检查通过，浏览器验证尚未完成。",
+        "2–5人375像素手机二维／三维、指定自己／队友、遵命／目标与重复手牌选择重连、缺值私有标记／一次罚格、观战只读浏览器通过；三人来源后段红线指定引爆／长官直接公开及结算面板结束通过。非完整公网或实际Mac Safari验收。",
+        "机器人本人数字优先指定自己，否则仅公开线索／推理；未知线值更改不影响缺值长官的指定。遵命／缺值标记／红线长官合法，避免送出唯一的命令值。",
+        "四种允许角色32局5胜27败、478次指定7次缺值标记，非法／停止／超限0及过程保存恢复；策略充分性未验证。",
+        "100局来源完整参考13583动作全部获胜，1542次指定自己795次队友，零罚格12数字退场；不认证生产能力及例外。",
+        "2–5人来源四根蓝2后段服务器暂停／重启后机器人自主翻牌／指定／回应／私有选线／原长官顺序、数字退场，零罚格获胜；非开局完整联机证明。"
+      ]
+    },
+    {
+      "id": 52,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 51,
+        "row": 6,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3，黄4"
+      },
+      "ruleSummary": "全队每人两个错误初始线索，蓝或红可标，黄不可；全部信息标记表示不是该值。双拆失败标刚猜值；禁等号／不等号装备。法德反面共同约束装备生成的标记，不能沿用便利贴真值。",
+      "requiredCapability": "全队假线索",
+      "audioRequired": false,
+      "remainingVerification": [
+        "多次否定叠加而非替换、已剪多标记回收全部、X/Y选择一枚而非两枚、便利贴精确错误值规则为开发解释，需进一步核对。",
+        "机器人策略充分性、稳定器保护红线后的假信息、更多装备交互、真实Mac Safari、正式公网整局／发布与进度版本未完成；合法机器人／完整参考／便利贴恢复与基础手机双视图已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "seq": 5
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/51",
+      "developmentModule": "all-false-info",
+      "developmentAcceptance": [
+        "2–5人全部队长51／55根，已知红3／双人黄4，排除共享1／12，角色与个人双重不被移除。",
+        "每人两个不同蓝／红初始错误标记，黄禁止，私人错误值选择、过期／冒用／真实值／同线重复拒绝且完全不变。",
+        "失败否定刚猜值、X/Y目标玩家开发选择一个猜值、双人黄线目标不揭黄／黄猜失败用黄否定标记；有限库存、耗尽口头回退及拒绝保持通过。",
+        "便利贴非回合使用、私有错误值选择／保存恢复、真实值／错玩家／旧编号拒绝，验证后才一次耗牌；观战视角不接收便利贴私有目标字段。",
+        "权威2–5人每次蓝／红初始错误值、真实蓝4配对解锁／便利贴非回合私人值选择的暂停／重启／凭据重连，真值／冒用／过期／旧修订／重复拒绝，正确回复才耗牌一次且不推进回合。",
+        "观战切换手牌视角不接收私人初始菜单、便利贴选值列表／选定目标且不能操作；版本17旧改编存档保持原顺序规则／红黄／引爆器。",
+        "界面红线初始允许／黄禁止、两个不同目标说明、便利贴私人错误选值和多条否定清晰分隔已实现，语法检查通过；浏览器尚未验证。",
+        "2–5人375像素手机二维／三维、两枚蓝／红初始假值、黄／真值禁用、标记重连、非回合私有便利贴选值／重连／一次耗牌、观众实际切手牌视角仍无私有菜单／目标通过。选值通知／跳转按钮仅本人；多条否定纵向保留字号／不盖邻线，2／5人完整无障碍标签通过。非Mac Safari或正式公网整局。",
+        "2026-10-07机器人仅本人手牌／公开库存选两个不同假标记，未知线值变更不改变初始；便利贴可主动使用并合法回复。五种角色40局6胜34败、280次初始／6次便利贴，非法／停止／超限0及过程恢复。",
+        "100局来源完整全信息参考获胜7116动作、零罚格，不认证策略、叠加／回收或额外装备例外。",
+        "2–5人来源合法蓝4解锁后非回合便利贴私有选择暂停／重启，机器人恢复只耗一次、不推进回合、不标真值，观战不收私有字段；非完整开局通关证明。",
+        "2–5人浏览器脚本环境机器人完成假标记，无Node require／规则库命名空间错误；说谎者／记忆关联回归通过。"
+      ]
+    },
+    {
+      "id": 53,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 52,
+        "row": 6,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "不用引爆器；机器人从1之前开始；成功不在机器人值前进1、在该值退1；失败进2；到12爆炸；禁倒带器及稳定器。",
+      "requiredCapability": "机器人代替引爆器",
+      "audioRequired": false,
+      "remainingVerification": [
+        "法语原卡印次／可选较宽松模式、红线公开与咖啡杯不算剪线移动、最后一剪到12与胜利优先级等精确例外仍需核对。",
+        "机器人策略充分性、更多装备交互／真实Mac Safari、正式公网整局／发布与进度版本未完成；固定来源完整参考、合法机器人／后段服务器恢复／旧存档及基础手机双视图已通过。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "silent": true,
+          "missing": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/52",
+      "developmentModule": "robot-pressure",
+      "developmentAcceptance": [
+        "法德正反核对：机器人从1之前起，不用引爆器，成功普通＋1／实际剪值匹配－1／失败＋2；禁6／9，双人红3。",
+        "2–5人全部队长50／51根、已知红2／3无黄、正常初始与个人角色通过。",
+        "私有回应中不移动，完整结算一次移动、保存恢复不重算、四线单拆、X/Y实际剪值、失败真线索／不动引爆器、德文到12及越过12均引爆通过。",
+        "荷兰发行商FAQ提供越过12作为较宽松替代文字；默认德文到12，可选变体不启用。",
+        "权威2–5人来源目标／本人选线各阶段暂停、重启、凭据重连，冒用／旧决策／旧修订／重复拒绝；仅完整结算一次移动，成功＋1／失败＋2、不推进引爆器，观战不收私有选择。",
+        "到12的进行中异常快照（含暂停／待回复）只恢复一次、修订＋1、清除决定；越界移动停在12引爆。",
+        "2–5人375像素手机二维／三维／观战浏览器：机器人轨道13位置（0起点）、引爆器隐藏、回应重连不提前移动、成功／失败位置同步、无脚本异常／溢出通过；非Mac Safari或公网整局。",
+        "机器人依据本人手牌／公开线索匹配当前数字，压力风险比较普通单／双拆和双重／共享三重／超级／个人三重；临界可按公开推理用咖啡杯，未知线值更改不影响公开匹配选择。",
+        "五角色40局9胜31败，非法／停止／超限0，引爆器不动与过程恢复；探测器和咖啡杯均有真实整局使用，策略充分性／精确例外未认证。",
+        "2–5人来源四根蓝2后段暂停／重启后双方选线、轨道2→1→2零失败获胜，引爆器不动／观战只读；非从开局完整联机或可达性证明。",
+        "版本17旧改编存档保留原静默／缺失、红黄和引爆器，不追加机器人压力规则。",
+        "100局固定来源发牌德文到12完整参考获胜：217次有限策略尝试、6605动作、7次咖啡杯1次对讲机；一致性断言发牌／装备／队长不变、逐动作仍12。五人种子8路径保存／完整重放再次获胜，未换软模式；不认证生产机器人或开发例外。",
+        "生产对讲机仅本人手牌／公开线索推理，私人接收者不读取别人秘密值，不发送索取值；交换与标记随线／不推进机器人回合通过。同40局仍9胜31败、个人10／共享6次交换，非法停止0；绊线和假线索关联回归通过。"
+      ]
+    },
+    {
+      "id": 54,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "development-module-tested",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 53,
+        "row": 6,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 0,
+          "candidates": 0,
+          "reserve": 11
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "红线不初始发牌，11根隐藏备用按音频加入；个人氧气9／6／3／2、分段消耗1／2／3，每完成蓝值全员补1，有可用氧气必须行动。德文修订录音草稿含两次双人额外免氧拆线；信号与英语版本差异待听核。",
+      "requiredCapability": "音频、氧气、动态红线",
+      "audioRequired": true,
+      "remainingVerification": [
+        "精确信号及修订德文双人免氧额外行动、英语版差异、音频冻结／恢复／最终引爆与当前玩家／额外行动回合顺序。",
+        "已空手玩家剩余氧气当前移入不可使用桶而不回中心、库存不足时补氧按座位顺序、稳定器能否保护缺氧跳过等开发解释需核对。",
+        "真实音频11红触发／精确信号中断交互、免氧／传氧／恐慌／屏息事件及权威时钟同步；红线组件／模拟恢复防重已通过，不能据此启用草稿时间轴。",
+        "界面、机器人、完整任务验收、旧存档／正式发布与内容版本；未核实粤语不得虚构。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          4,
+          4
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {}
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/53",
+      "audioEditionEvidence": {
+        "source": "audio-54-de",
+        "status": "自动转录草稿，未认证运行时间轴",
+        "twoPlayerBonus": "两次找到氧气瓶后，当前玩家额外立即免氧拆线一次；待逐段听核。",
+        "initialOxygen": 9,
+        "hashVerified": true
+      },
+      "developmentModule": "submarine-audio",
+      "developmentAcceptance": [
+        "2–5人全部队长48蓝初始、11红单独隐藏未发，个人9／6／3／2氧及32总量守恒，禁共享／个人X/Y和正常初始通过。",
+        "初始完成后进入audio-ready，音频未核实不能开始／客户端不能用verified参数绕过；可暂停恢复，不设置假倒计时。",
+        "测试显式模拟音频开始，仅检验原卡机制：蓝值分段1／2／3费氧，一次扣费／回库存，私人回应与保存恢复不重扣；完成蓝值一次补氧，空手玩家不领取。",
+        "有足够氧气可行动或可免费公开红线时不能主动省氧跳过；不足才跳过罚一格；无效动作完全不变和32库存守恒通过。",
+        "内部红线事件绑定游戏／连续序号，重复不重抽；单架自动排序，双架仅本人见数值／架选择。服务内部单次修订保存广播、客户端无入口，旧修订拒绝。",
+        "开发中断模型保存原选线／编号／公开命中，放红后恢复不重扣氧；2–5人模拟事件暂停／重启／凭据重连／观战视角私人字段屏蔽、冒用／旧编号／重复防重通过，非真实音频计时证据。",
+        "机器人不绕过音频等待，私人放架只据本人架、未知他人值不影响；零氧合法跳过。界面私人放架／中断提示与箭头已实现，语法及隔离浏览器通过，真实音频未验。",
+        "内部3–5人补氧事件从中心库存给当前仍持线玩家一枚，32守恒，重复事件不再补氧；2人因额外免氧拆线尚未核实，整条补氧事件拒绝，不部分执行。",
+        "内部传氧事件支持给／领取一名仍参与队友的正整数氧气或放弃，菜单仅本人；保存中断的原选线，处理完恢复同一编号，不重复扣氧或推进回合。",
+        "2–5人内部服务测试通过：真实修订／重复请求不重执行、身份／旧编号／过量拒绝、暂停／重启／凭据重连、观战手牌视角仍屏蔽私人菜单，32氧气守恒。机器人仅用本人费用与公开余额决定传氧。",
+        "传氧隔离浏览器2–5人375像素双视图加观众通过：菜单私人、数量验证、公开宣告和箭头保留、刷新重连、给氧后恢复原编号完成双方拆线且不重扣氧；非真实录音时间轴。",
+        "红线事件隔离浏览器2–5人375像素双视图通过：11红备用仍隐藏；双架私人值／放置菜单可刷新恢复，单架自动排序插入；原公开命中／箭头保留，放线后同编号继续且不重扣氧。",
+        "界面补齐中心库存／个人余额／费用说明及播报选择轮到本人提示；2–5人双视图加观众，零氧宣告禁用及理由、缺氧跳过只罚一次、足氧跳过禁用和观战只读通过。真实录音时间轴仍关闭。",
+        "英德录音自动转录交叉支持“本回合后同人再行动一次”，已新增内部panic组件；非信号边界认证，真实时间轴仍关闭。",
+        "连续事件不打断原私人决定；结算后同人接班一次，回合计数正常增加、第二次拆线仍付正常氧气费用；重复事件不叠加，空手取消接班与爆炸优先。咖啡杯与未结算连续事件的组合暂拒绝，待精确核对。",
+        "2–5人内部服务连续事件修订只一次、原私有选线编号保留、暂停重启／凭据重连、冒用／旧编号／重复回复防重通过。375像素双视图加观众：公共连续提示／箭头、刷新恢复、同人接班通知、下一次正常扣氧与随后轮转通过。",
+        "连续事件2–5人16局机器人模拟1胜15败、622动作，非法／停住／超限0；仅合法性与终局验收，不认证录音或通关策略。"
+      ]
+    },
+    {
+      "id": 55,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 54,
+        "row": 6,
+        "column": 5
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2/3"
+      },
+      "ruleSummary": "人数张挑战牌；固定橙色空格起点；每完成挑战引爆器退一格。",
+      "requiredCapability": "挑战卡、特殊引爆器",
+      "audioRequired": false,
+      "remainingVerification": [
+        "将组件接入第55关权威任务模块、玩家动作／私人选择和界面；当前公开仍改编。",
+        "实现挑战1特殊盲剪、挑战5连续单拆；核对挑战2／7按导线还是拆线行动计数，以及装备批量拆除、咖啡杯和红线公开的序列例外。",
+        "核对挑战3仅一个两线组／空架、挑战9零根蓝线等边界；当前组件按非空组／至少一根蓝线处理，不据此核实原卡例外。",
+        "核对特殊引爆器空橙格起点和回退边界；实现全部五张新共享装备并裁定即时效果／版别差异。",
+        "完成2–5人整关来源可达性、机器人、联机私有动作／重启恢复及双视图验收。",
+        "挑战1奇数剩余导线：直接核对德文卡仅剪队友一根，尚未找到发行商对重复特殊动作、单根／三根收尾及空手玩家参与的明确补充；不自行启用。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "none",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "noChat": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/54",
+      "developmentComponent": "challenges",
+      "developmentAcceptance": [
+        "新增独立挑战组件：10张稳定编号／中文功能描述、按人数从10张唯一牌随机抽取、挑战8另抽两张不同数字；状态版本／游戏编号绑定与保存恢复通过。",
+        "挑战3／6／9／10逐架判断、挑战4／8只按首次完成数字的顺序奖励、一次退格／最早格夹限、错误／重复／旧游戏／暂停／待决定／引爆状态拒绝不变通过。组件不向公共视图发送他人满足条件的线架。",
+        "2–5人全部队长各25个种子的组件设置检查通过；任务卡用线作独立夹具，不认证特殊引爆器或第55关整局。真实浏览器加载／375像素原练习标记／双视图及全66关切线、第52关脚本环境回归通过。",
+        "挑战5新增相邻正常拆线回合组件：根据真实最后行动结果验证，两次团队成功单拆一次退格，四线单拆只算一次，通行证两线单拆计为一次；成功双拆／失败中断。",
+        "2–5人真实引擎两玩家单拆、通行证后单拆、成功双拆与失败中断、事件去重／保存恢复／重复已剪ID拒绝通过。公共视图仅进度／完成状态，不发送事件详情。",
+        "只确认相邻正常拆线回合；存在未记录非拆线间隔时拒绝推断，咖啡杯／公开红线／批量装备对连续性的例外仍待核实。"
+      ]
+    },
+    {
+      "id": 56,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 55,
+        "row": 6,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "每人一根朝外本人隐藏线；主人只能主动拆，失败爆炸；别人剪该隐藏线引爆器进一格；更正：不使用数字卡。",
+      "requiredCapability": "隐藏自身线",
+      "audioRequired": false,
+      "remainingVerification": [
+        "两架情况下随机朝外线是否保留原架、转到第二架或本人选架；当前原架处理未据此认证。",
+        "即时装备及分解器对朝外线的精确任务例外；当前无已实现任务批量效果钩子，不强行执行。",
+        "更广泛场景：主人红线判断错误、失败目标线索／标记不足、已剪朝外线的装备权限、处罚到尽头及正式整局可达性／实机Safari。",
+        "依据完整场景与来源裁定后再替换公开改编；当前公开版本17仍24关核实。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 2,
+        "ruleFlags": {
+          "countdown": 6
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/55",
+      "developmentModule": "all-outward-wires",
+      "developmentAcceptance": [
+        "新增all-outward-wires开发模块：48蓝、红2/3候选；双人改为已知红3，无黄／数字卡，一人随机一根本人不可见／队友可见线，暂保留原架末尾，正常区独立排序及普通初始标记。",
+        "2–5人全部队长12种子设置／许可视图／紧凑包通过。普通宣告只能用可见未剪值；相同许可视图的不同合法隐藏摆法给同样拒绝，防止试探本人隐藏值。",
+        "真实队友朝外目标两阶段：确认／选择自己之前不罚，完整剪中只罚一次；主人主动盲双／单拆成功不罚、盲拆失败爆炸；每个玩家朝外红线主动推断公开，普通红线命令不提供颜色验证。装备影响朝外线均拒绝。",
+        "2–5人权威：每阶段暂停重启／凭据重连及原编号、主人隐藏值／私有确认辅助／观战屏蔽、确认后公开命中真值、身份／重复防重，处罚只一次。旧版17改编存档保留原黄红和倒计时／本人完整视角。",
+        "375像素双视图2–5人加观众：本人隐藏／队友可见、规则提示／公共箭头、目标主人正确确认文案／刷新、自己选线后一次处罚通过。默认角色16局1胜15败776动作，四种额外角色16局1胜15败752动作，非法／停止／超限0；只是本次合法性结果，不证明全部发牌可解。"
+      ]
+    },
+    {
+      "id": 57,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 56,
+        "row": 6,
+        "column": 7
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "十二数字各绑定一限制；完成该值四根立即替换共享限制；全队无法行动则失败；禁分解器。",
+      "requiredCapability": "数字绑定限制",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更多装备与额外角色交互、正式整局联机／手机与实际Safari；已完成100局全信息参考通关及额外角色合法终局，仍不认证全部随机发牌可解或机器人策略充分性。",
+        "四根3同时触发新共享限制与储备箱等即时效果的优先顺序；未开启自动即时调度。",
+        "限制H与×1频率标签等特殊标记的精确范围，免费跳过能否先用任何时机装备的边界。",
+        "死锁快照及随时装备导致当前玩家无法行动的更多服务端场景；只有全套验收后才替换公开改编。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "timer": 30
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/56",
+      "developmentModule": "number-bound-constraints",
+      "developmentAcceptance": [
+        "新增number-bound-constraints开发模块：48蓝、红1已知／双人2，无黄；12数字唯一随机绑定A–L全公开，最初无限制，完成四根立即换对应共享限制，排除分解器。",
+        "2–5人全部队长12种子设置／普通初始／无虚构计时通过。真实完成后立即换牌、保存恢复一致，非空手奇数持有者在偶数限制下免费跳过；全队无行动直接失败且不罚格，红线公开免限制；异常死锁快照可恢复为败局一次。",
+        "2–5人权威目标／自己阶段暂停重启／凭据重连，完成前限制不变／第四根后全员同步，重复不再切换／无额外罚格，共享禁装备校验通过。旧版17改编保留黄红／30秒计时与完整本人手牌。",
+        "375像素双视图2–5人加观众：12张绑定卡、展开完整规则、最初无限制、两阶段切换时机及已完成标记通过。默认角色16局6胜10败、913动作／151次限制变更，非法／停止／超限0，不认证策略或整关。",
+        "真实非回合抓钩改变当前玩家可行动值：私人选架前不跳过，完成后免费跳到合法玩家，保存恢复一致、随后正常两次单拆获胜；这是后段夹具，非整局认证。限制K真实两次双拆合法，单拆拒绝，第四根完成后才换A。",
+        "新增四种额外角色2–5人16局，0胜16败／776动作112次变更；默认角色此次16局2胜14败／829动作136次变更，非法／停止／超限均0。推理随机采样结果不认证策略充分性。",
+        "全信息参考路径2–5人各25固定真实开局，共100局、231次策略尝试、2453动作找到全部清线胜局；同一开局只改变策略、不重新发牌。纠正参考脚本误用单拆权限过滤K下双拆，20局探测56尝试489动作也通过。非机器人可见信息策略，也不认证所有随机开局或未解决任务例外。",
+        "修正机器人抓钩策略：先验证回收后单拆权限／数值限制，不在K下收齐最后一对堵死双拆。2–5人已知尾局真实双拆及双方选线获胜，抓钩未耗用；原抓钩正常尾局／隐私与权威回归退出码0。修正后默认16局6胜10败864动作139变更，额外角色16局3胜13败789动作116变更，非法／停止／超限0；随机采样不能与先前胜率作确定因果比较。"
+      ]
+    },
+    {
+      "id": 58,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 57,
+        "row": 6,
+        "column": 8
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "无信息标记，失败也不标；个人双重探测器可每回合重用；仅双重探测器角色；禁便利贴、电池。",
+      "requiredCapability": "可重复角色、无信息",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          3,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "hide": true,
+          "fog": true
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/57"
+    },
+    {
+      "id": 59,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 58,
+        "row": 6,
+        "column": 9
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "十二数字随机排一行，机器人初始在7朝较长一侧；只能向前或停留到所持值拆线，随后选朝向；无合法值反向并罚一格。",
+      "requiredCapability": "定向机器人、数字位置",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更多角色／装备及取线后完全失去已选数值的精确处理，需要对应来源及场景验证；已完成100固定开局参考路径，不认证所有随机发牌可解。",
+        "反向罚格可否使用稳定器、红线公开是否无需朝向、最后一根后的朝向步骤仍待精确裁定；当前反向不允许拆线修饰，普通仅红公开按基础规则保留。已完成数字牌翻背面显示。",
+        "即时储备箱／分解器与机器人位置及完成翻牌的优先顺序未核实；该任务没有批量效果钩子，不绕过接口执行。",
+        "更广泛整局联机／任务装备及实际Mac Safari仍待验收；已完成两人／五人整局手机双视图参考通关，只在全部规则／场景通过后替换公开改编。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": 0,
+        "personalDoubleDetector": false,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {}
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/58",
+      "developmentModule": "robot-number-route",
+      "developmentAcceptance": [
+        "新增robot-number-route开发模块，直接核对德文及法文正反卡：48蓝、红2选3／双人3已知，无黄，十二数字随机一行，从7朝较长一侧，排除共享及个人X/Y。2–5人所有队长8种子设置及公共路线／普通初始通过。",
+        "先明确向前移动或停留到本人蓝值，再拆该值，完整结算后才给原行动者朝向决定；单拆、成功／失败双拆、双重探测器多命中及本人选副本通过。完成四根标完成。安全失败也选择朝向，最后罚格直接失败。仅无可达蓝值能开始反向一次并罚一格；旧编号／越权／修饰拒绝不变。",
+        "2–5人权威移动前后、目标／本人／朝向逐阶段暂停重启凭据重连；朝向菜单仅行动者，观众只读且路线同步，重复命令不再换回合。旧版17改编保存及无个人装备保留。",
+        "375像素2–5人加观众，手机双视图12数字路线／移动入口、实际二维及三维点线、公共红箭头、本人选第二副本后才选朝向、持续轮到本人横幅、刷新恢复及全员同步朝左与下一玩家通过；没有页面异常／横向溢出／额外罚格。",
+        "随时倒带不重置已选路线；2–5人抓钩拿走当前最后一根后，新行动者重新选择移动，两架私人放架前不打断，最后一对真实单拆获胜；后段夹具非整局认证。",
+        "2–5人16局推理机器人3胜13败、1004动作215次朝向0次罚格反向，非法／停止／超限0。只认证合法性与终局，策略仅使用本人手牌与公开信息；这是早期运行，后续100局全信息参考通关另行记录。",
+        "100个真实来源固定开局全信息参考通关：2–5人各25种子，11034合法动作2336次朝向166次主动红线公开、罚格反向0；全部导线已处理、12数字全部完成、无待决定。只复制同一开局策略，不修改／重新发牌，整体指纹保持不变；参考策略使用全信息，不供推理机器人调用，也不认证所有随机开局或未解决装备例外。",
+        "数字牌完成显示改为背面纹理及已完成字样，保留全部十二牌位与机器人位置。2–5人手机双视图真实第二次双拆完成四根，所有玩家与观众同步翻背面、朝向决定及布局可读／无溢出，浏览器退出码0。",
+        "额外个人雷达非回合使用不重置路线，个人三重先移动／两阶段真实选副本，与共享三重及队长双重状态独立。稳定器保护蓝色及红色双拆失败后仍选朝向，零罚格、红线无信息标记、下一回合保护清除。专项核心／权威退出码0，不是反向保护裁定。",
+        "默认16局本次1胜15败1052动作224次朝向、反向0；三种额外角色16局2胜14败1077动作231次朝向、反向1；非法／停止／超限0。五人第四位非队长用双重角色，避免重复有限角色卡。另2–5人强制无前方蓝值真实夹具，机器人反向罚一格仍保持回合，随后移动成功，不循环拒绝。",
+        "两人及五人加观众375像素完整真实来源发牌界面通关：101／121个界面动作、2／2次主动红线公开，初始标记、三维切线后途中转二维、全部12数字翻背面、全员同步胜局，引爆器0、没有待决定／页面异常／横向溢出。测试程序仅在隔离本机读取私有快照选正确目标，产品客户端仍各收许可视图；不认证推理策略或未解决即时装备例外。",
+        "第59关加入100局参考路径后的完整npm test退出码0。旧与合并各528局模拟非法／停住0，旧目录等待0，合并目录第43关三人出现一次合法等待（日志play、引爆器2）；尚未解决，不把绿色门禁当作所有关卡都能结束。此运行尚未包括后来第61关。"
+      ]
+    },
+    {
+      "id": 60,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 59,
+        "row": 6,
+        "column": 10
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "人数张挑战牌；固定橙色空格起点；完成挑战退一格。",
+      "requiredCapability": "挑战卡、特殊引爆器",
+      "audioRequired": false,
+      "remainingVerification": [
+        "实现官方任务模块，并通过依据原始规则设计的验收测试"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "countdown": 10
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/59"
+    },
+    {
+      "id": 61,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 60,
+        "row": 7,
+        "column": 1
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "个人限制 A–E，2人额外两位置、3人额外一位置；F–L补充牌；更换自己罚一格；队长回合可全队旋转限制。",
+      "requiredCapability": "可旋转个人限制",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更广泛正式整局、额外角色和后期装备／H特殊标记交互仍待验证；已完成100固定真实开局全信息参考通关，不认证所有随机发牌可解。",
+        "德文立即死锁与法文整轮跳过失败的版本差异、全队无行动时付费换牌／队长轮转的优先顺序、空手队长及额外位置的任务例外需要进一步来源裁定。",
+        "法文任何时候换牌与正在结算的拆线／轮转投票边界尚未精确裁定；当前不能打断待决定动作。有限牌堆耗尽不补回，DE堆顶／FR随机措辞记录，不假设无限重抽。",
+        "四根触发即时储备箱／分解器与限制变更的优先顺序及任务效果钩子未完成；完整66目标仍继续，不能仅因新模块测试通过就提高核实状态。",
+        "更多联机整局／手机场景和实际Mac Safari仍待验收；公开61仍版本17改编。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "parity",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "missing": true,
+          "hide": true
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/60",
+      "developmentModule": "rotating-personal-constraints",
+      "developmentAcceptance": [
+        "新增rotating-personal-constraints开发模块，直接核对德文／法文原卡：48蓝、红1已知／双人2，无黄；A–E随机公开给每人，2人队长左右各加一张、3人左侧加一张；F–L七张随机隐藏有限牌堆，其他A–E不公开。2–5人全部队长8种子设置通过。",
+        "个人限制不自动永久退场，无法遵守免费跳过，红线公开豁免。采用德文全队无行动立即失败，法文整轮都跳过才失败不是本版本。真实保留选择后跳过／限制仍在、换K引入全队死锁立即败局及异常快照恢复一次通过。",
+        "队长回合开始保留，或提出顺／逆一位轮转；每人逐次确认，最后同意前牌不移，任一不同意即保留。包括额外牌位，主人位置不变。顺逆两向2–5人保存恢复／私有菜单／重复越权旧回复与一次轮转通过。",
+        "无动作结算期间可非本人回合付一格换本人限制，从F–L隐藏牌堆取顶，旧牌弃置不回收，版本防旧换牌；换牌刷新待决定队长编号，达到末端立即失败。真实非回合换牌及库存守恒通过；库存耗尽夹具是构造边界，非开局可达性证明。",
+        "2–5人权威逐次同意前暂停重启凭据重连，牌位未提前移动，观战选玩家视角仍移除菜单，身份／旧决定／重复拒绝；非回合換牌重启后只抽一次／只罚一次。旧版本17改编保留缺失值及隐藏候选，不强制迁移。",
+        "375像素2–5人加观众五场景：两视图限制描述／额外位置可读，队长提议、对应玩家同意或不同意按钮、轮到本人通知、最后确认前刷新恢复、最终牌位同步／非回合换牌减少库存通过；无页面异常及横向溢出。额外两人真实房主暂停确认／继续后原决定保留，单独浏览器退出码0。",
+        "2–5人16局推理机器人1胜15败、1002动作42轮转提议87同意；非法／停止／超限0。队长只用本人手牌及公开牌位挑方向，未使用队友隐藏值；只认证合法终局，尚无固定开局参考通关。原限制模块回归退出码0。",
+        "新增全信息参考路径：2–5人各25真实固定开局，100局全部清线获胜，119策略尝试8299合法动作，63次付费换牌476次轮转16次真实已解锁倒带器。只复制策略尝试，不修改或重发同一开局；完整指纹保持不变，不供推理机器人调用，也不裁定未解决版本／装备例外。",
+        "真实轮转到A后立即禁奇数宣告；偶数双拆目标公开／本人明确选第二副本，目标和本人阶段换牌拒绝、不改库存或限制，保存恢复一致，轮转不耗拆线回合。",
+        "2–5人队长隐私回归：交换未标记隐藏值后库存和逐架排序仍有效、本人许可视图完全相同，队长选择仍相同，不读取队友真值。随后16局1胜15败979动作37提议82同意、非法／停止／超限0；随机推理结果不作策略充分性证明。",
+        "本轮包含第61关100局参考路径和第62关核心／权威／机器人专项的完整npm test退出码0，旧与合并各528局非法／停住／无合法动作等待0。尚未包括随后新增的第62关100局参考门禁，该专项另行退出码0。此随机模拟结果不关闭以前第43关等待例外，也不是全66关官方内容完成证明。"
+      ]
+    },
+    {
+      "id": 62,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 61,
+        "row": 7,
+        "column": 2
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "人数张数字牌；固定橙色空格起点；完整剪四根对应值退一格。",
+      "requiredCapability": "数字目标、特殊引爆器",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更广泛联机整局、全部额外角色／装备组合及实际Mac Safari仍待验收；已完成100固定来源开局参考通关及两人／五人手机整局，不认证所有随机发牌或策略充分性。",
+        "即时储备箱／分解器触发与数字奖励及胜负判定的精确时序未核实；当前只支持明确法文分解器内部组件，不把测试注入事件当作自动流程。",
+        "完成牌是否移除／翻面并未在背面要求，当前保持原公开数字并标已奖励；特殊引爆器最早格及所有介入的场景仍需完整验收。",
+        "仅在完整来源、引擎、界面和联机整局验收后替换公开改编；当前公开62仍内容版本17改编，66目标继续。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "turns": 4,
+          "timer": 45
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/61",
+      "developmentModule": "number-completion-rewards",
+      "developmentAcceptance": [
+        "新增number-completion-rewards开发模块，核对德文／法文原卡一致：48蓝、已知红2／双人3，无黄；人数张随机唯一公开数字，固定骷髅前橙色空格0、末端1、最早−4，普通初始和额外角色，无虚构计时。2–5人全部队长各8种子来源设置通过。",
+        "每个选中值四根完成只奖励一次后退，非选中值正常拆而不奖；五人第五奖励在最早格不越界，也不因后续错误再奖励。初始首错引爆、一奖励后第二错引爆、普通四根单拆及有限奖励保存一致通过；持有者／公开卡属于明确后段夹具。",
+        "2–5人双拆目标公开／本人选择完整结算后才退格，重复不再奖励、保存恢复一致。机器人在固定橙色最后一格会先用已解锁倒带器；修正通用固定空格轨道的倒带危险检查，原绊线回归退出码0。界面按距离引爆的格数说明，不误称人数起点之前。",
+        "任务批量效果钩子：明确法文内部17完成选中值同样只奖励一次，重复不重抽／不再退，保存恢复一致、客户端无触发入口。旧分解器及未支持任务拒绝回归退出码0；未开启自动即时调度，未裁定德文可选效果。",
+        "2–5人权威目标／本人各阶段暂停重启凭据重连，完整配对后才公开奖励；内部法文17第二奖励重启重复不重抽／不退，全员同步、效果账本私有。旧版本17改编原引爆器及任务保留，不强制加奖励。",
+        "375像素2–5人加观众双视图：人数张奖励／2/4、实际二维三维点击及公共箭头，目标和本人阶段各刷新恢复；本人配对完成后全员4/4已奖励／距引爆2格，无页面异常与横向溢出，浏览器退出码0。后段非整局证明。",
+        "2–5人16局推理机器人2胜14败489动作17次四根奖励；非法／停止／超限0，专项退出码0，仅认证合法终局。",
+        "第62关100个完整来源固定开局参考通关：2–5人各25种子，6424合法动作177次主动红线公开350次数字奖励；全部导线清空、没有待决定，最终退到−min(人数,4)，每个步骤核对奖励只来自该值四根完成且不越最早格。源开局指纹不变，不重新发牌；策略使用全信息，不供生产机器人调用，也不认证即时装备例外。",
+        "两人及五人加观众375像素完整真实来源发牌界面通关：55／71个界面动作，各2次主动红线公开，实际三维点线后途中切换二维、全部公开数字已奖励、全员胜局同步，最终−2／−4、奖励没有重复、无页面异常及横向溢出。测试程序只在隔离本机读取快照选正确目标，产品客户端仍各收许可视图。",
+        "本轮包含第61关100局参考路径和第62关核心／权威／机器人专项的完整npm test退出码0，旧与合并各528局非法／停住／无合法动作等待0。尚未包括随后新增的第62关100局参考门禁，该专项另行退出码0。此随机模拟结果不关闭以前第43关等待例外，也不是全66关官方内容完成证明。"
+      ]
+    },
+    {
+      "id": 63,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 62,
+        "row": 7,
+        "column": 3
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红3"
+      },
+      "ruleSummary": "队长初始氧气2/3/4/5人14/18/24/30；蓝值消耗后余量传下家，队长回合补满；禁 X/Y。",
+      "requiredCapability": "循环氧气池",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更广泛整局、全部允许角色及装备组合、实际Mac Safari仍待验收；已完成两人及三人全信息参考手机界面整局及100固定开局，不认证推理策略或所有随机发牌可解。",
+        "非队长咖啡杯跳过空手队长位置的精确补氧时机、随时交换／抓钩导致队长或当前持有人清空的更多权威场景尚需来源裁定与测试。当前正常顺时针经过空手队长补回，手动咖啡指定不额外假设经过的牌位补回。",
+        "氧气不足跳过能否用稳定器保护尚未核实，当前不组合修饰；即时15／17触发、耗氧、交余量及胜负优先顺序未完成，不绕过未实现任务批量效果钩子。",
+        "仅全部内容、引擎与界面／联机验收后替换公开改编；当前公开63仍内容版本17改编。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          1,
+          2
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "noChat": true,
+          "fog": true,
+          "seq": 3
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/62",
+      "developmentModule": "passing-oxygen",
+      "developmentAcceptance": [
+        "新增passing-oxygen开发模块，核对德文／法文正反一致：48蓝、已知红2／双人3，无黄；队长初始2／3／4／5人14／18／24／30枚，中心库存0，排除共享／个人X/Y，水下禁聊。2–5人全部队长8种子设置、普通初始和无虚构计时通过。",
+        "按宣告蓝值先付几枚，费用进库存；两根／四根单拆均只付一次，双拆无论成功／失败不退款，目标与本人回应不再扣。结束交余量给下一位，队长开始收回库存，经过空手队长牌位仍补回；总量守恒。非法目标／费用／省氧跳过完全回滚，真实单拆／双拆及整轮补氧通过。",
+        "缺氧且无免费红线行动才罚格跳过，到末端真正失败；零氧仅红仍必须免费公开。队长咖啡杯把整包氧气交指定下一位。缺氧跳过的稳定器等修饰未核实，不擅自免罚；后段缺氧、空手队长唯一剩余玩家实际赢局和拇指通过。",
+        "2–5人权威目标／本人逐阶段暂停重启凭据重连，扣费恢复不重复扣、不提前交氧；身份／旧回复拒绝，选第二副本后一次交余量，全员预算守恒同步。水下聊天明确拒绝且不广播。旧版本17改编原任务及计时不迁移。",
+        "375像素2–5人加观众双视图：持有人／中心库存／费用5可读，当前可行动时不能省氧跳过，真实二维三维点线／公开箭头，目标及本人各刷新恢复，完成第二副本后全员同步余量到下一位，不重复扣费／不提前交氧、无异常溢出。",
+        "机器人缺氧时不非法使用通行证剪付不起的值，咖啡杯可用优先合法跳过且不罚格。2–5人16局0胜16败643动作24次缺氧跳过、非法／停止／超限0，氧气守恒；只认证合法终局，不认证策略充分性。旧44／49氧气模块回归退出码0。",
+        "真实非回合抓钩后段：队友收队长最后蓝12，私人放架前不转预算／不打断；队长红线免费公开交完整14，队友四根单拆12只付12后赢，无额外罚格且保存一致。后段不冒充完整开局。",
+        "100固定来源开局全信息参考通关：2–5人各25种子，506策略尝试6394合法动作126次缺氧跳过22杯咖啡11次倒带1次抓钩1次通行证。每动作氧气守恒、全部线处理／无待决定，同一开局指纹不变、不重发；参考策略不供生产机器人。",
+        "参考验证保留早期失败证据：基础策略100局只找到98局，升级后93局；这不是引擎失败或无解证明。结合基础与装备策略，同一100开局全部找到合法路径；两人种子8抓钩10尝试43动作1跳过（该完整参考路径在本人回合使用，非回合另有后段夹具），三人种子17通行证12尝试57动作2跳过。",
+        "两人种子8和三人种子17完整真实来源发牌手机界面参考通关：45／60个游戏动作、1／2次主动红线公开、1／2次缺氧跳过；实际三维到二维。两人路径抓钩在本人回合使用（非回合另有后段夹具），私人放架前刷新恢复；三人路径实际通行证选两副本并付原数字费用。每一步氧气／持有人／回合／引爆器均与参考一致、全员胜局同步及总量守恒、无异常溢出。",
+        "修正通行证前端确认：当前持有人或氧气不够时禁用确认并说明需要／现有数量。三人375像素双视图氧9蓝10三根，普通单拆不成立／缺氧跳过可用；选择两根后费用10不可支付，取消或切视图不扣氧／耗牌，所有许可视图与快照预算不变，浏览器退出码0。",
+        "参考求解器现在导出可重放动作序列，每个接受动作记录氧气／回合／引爆器，用于真实界面检查；试算只在隔离本机进行，不供生产机器人或客户端读取其他手牌。",
+        "本轮包括第63关核心／权威／机器人及100固定开局参考的完整npm test退出码0，旧与合并各528局非法／停住／无合法动作等待均0。此随机结果不能关闭先前第43关等待例外，也不是全部66关已核实证明。",
+        "使用时机继续核实：法文盒1明确底盒在有黄线的任务入池并在一对黄线后可用，盒5新牌需四根对应值；底盒／储备箱照片页脚Sofort／Effet immédiat，与倒带器Jederzeit不同。当前发行商主规则／FAQ未提供这类新增页脚的独立定义，不把字样相似当作已经裁定自动触发优先顺序。"
+      ]
+    },
+    {
+      "id": 64,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 63,
+        "row": 7,
+        "column": 4
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 1,
+          "candidates": 1
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "红2"
+      },
+      "ruleSummary": "每人随机两根朝外，本人隐藏；较小置左端、较大置右端，两架合计两根；隐藏线不能用装备；主人猜错爆炸，别人剪罚一格。",
+      "requiredCapability": "双向隐藏自身线",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更多权威失败／单拆／红线及额外角色和装备的决定阶段验收；已有2–5人左右改选与偏好隐私的重启重连及重复防护。",
+        "更广泛手机和整局联机／实际Mac Safari、更多合法盲单拆组合仍待验收；已有100固定开局全信息参考通关和2–5人手机双视图左右选择。",
+        "更多有效性／概率边界、额外角色和所有装备／线索耗尽等互动仍待验证；已完成两端排序约束及合法隐藏值变换隐私回归。",
+        "四根3即时储备箱的强制时机／优先顺序未核实；分解器按已核实更正排除。未解决装备不会凭空替代规则。",
+        "当前公开64仍版本17改编，完整66目标继续，只有所有卡面／行为和场景验收完成才升级。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          4
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 2,
+        "ruleFlags": {
+          "silent": true
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/63",
+      "developmentModule": "double-outward-wires",
+      "developmentAcceptance": [
+        "新增double-outward-wires开发模块，原德文正反卡：48蓝、已知红1／双人2，无黄；每人整手随机两根朝外线，按它们实际值较小左端／较大右端，普通区独立排序。发行商更正：两架也整手两根，第一架最左及第二架最右；按日本发行商FAQ替换分解器17，包括储备。",
+        "2–5人所有队长8种子设置／初始一蓝线索／无虚构计时；双端两ID唯一／主人隐藏／队友可见及正常区排序通过。初始标记和所有共享／个人装备仍排除朝外线。",
+        "双拆先由队友公开目标，再给行动者全部未剪朝外线的私有选择，不按真实匹配筛选隐藏身份；可改变先前偏好，偏好不在目标阶段发布。真实右端主动盲拆、保存一致、队友剪中朝外线完整配对后才罚一格通过。新偏好字段从观战视角移除。",
+        "显式单拆可选择一或两朝外线，依据已知同值和公开完成数量组成2／4；真实来源同值双端加两已知四根单拆通过。目标猜错盲拆立即引爆，不发布尚未选择的偏好线／未定义ID。全红宣告必须实际全部红，两根中一蓝一红真正失败，不误自动剪蓝。",
+        "界面添加左／右盲双拆偏好、单根或两根朝外单拆入口及两根说明；角色本人回应保留先队友确认／后本人选择。界面与权威服务的多人数实际检查尚未完成，不当作已通过浏览器。",
+        "机器人增加两根朝外同时单拆候选、独立左／右盲双拆及本人回应概率选择；采样只用公开两端相对大小约束，不读取主人真值。真实同值双端末对后段可盲单拆赢，16局2胜14败771动作、非法／停止／超限0；仅合法性，不认证策略充分或全部发牌。",
+        "原第38关朝外动作、第56关核心和推理机器人回归退出码0；完整npm本轮已通过的是第63关版本，不包括随后第64关新门禁。",
+        "2–5人权威左端偏好／右端实际匹配来源场景：目标及本人阶段暂停重启凭据重连，目标确认后可改右端，私有菜单和偏好仅本人；观战选择本人视角仍剔除选择且两值隐藏，身份／旧回复拒绝、重复只剪一次、引爆器0。旧版本17改编原任务及视图保留。",
+        "375像素2–5人加观众双视图实际检查：左右偏好／双端说明、公共目标红箭头，目标和本人各刷新后改选右端成功；左端仍隐藏未剪，右端剪后真值公开，无页面异常及横向溢出。观战实际切到行动者视角仍不接收私有菜单或偏好。",
+        "浏览器发现两个真实操作问题并修正：底部候选过多的粘性操作栏遮挡视图按钮，改为限高内部滚动；左右偏好按钮data-w被通用导线处理器拦截，改独立data-own。修正后全部2–5人手机双视图场景退出码0。",
+        "100固定来源开局参考通关：2–5人各25种子、100策略尝试6290合法动作9次队友朝外罚格12次倒带3杯咖啡，全部导线处理／没有待决定，同一开局指纹不变。仅全信息参考可达性，不供生产机器人或认证任意随机发牌／即时效果例外。",
+        "双端推理和隐私回归：左端已公开剪后右端样本不低于左值且有有效样本；2–5人不同真实隐藏摆法库存／普通区排序／两端顺序仍有效、本人视图相同，固定采样概率完全相同。随后16局0胜16败758动作、非法／停止／超限0；随机推理不是策略充分证明。"
+      ]
+    },
+    {
+      "id": 65,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 64,
+        "row": 7,
+        "column": 5
+      },
+      "playerCounts": [
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 3,
+          "candidates": 3
+        },
+        "yellow": {
+          "count": 0,
+          "candidates": 0
+        },
+        "twoPlayerAdjustment": "不支持2人"
+      },
+      "ruleSummary": "十二数字卡分玩家；须拥有该值牌才可宣告；每回合结束传一牌；清空手牌后仍持未完成数字会失败。",
+      "requiredCapability": "数字牌传递；3–5人",
+      "audioRequired": false,
+      "remainingVerification": [
+        "更多角色／装备／单拆／失败及实际Mac Safari仍待验收；已有75固定开局参考及三人／五人完整联机界面路径。",
+        "数字手牌0时如何结束强制传牌、传正面牌给已无导线玩家、Grapple移走最后线及复活后的牌检查需要精确来源裁定；当前没有牌不伪造传牌，仍按不匹配跳过，明确构造边界不作完整认证。",
+        "同次双拆双方都清空的传牌次序、目标清空在原目标先剪线／本人选择期间的特殊时序还需更多源场景。当前完整配对后先目标再行动者，避免把先前偏好或角色状态当作新规则。",
+        "不匹配跳过是否能被稳定器保护尚未核实，当前不组合修饰；即时储备箱／分解器及多玩家同时清空、翻数字、胜负判定的任务效果钩子尚未实现，不绕过执行。",
+        "仅所有规则及验收完成后升级公开任务；当前公开65仍版本17改编，完整66目标继续。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          2,
+          3
+        ],
+        "yellow": [
+          2,
+          3
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "missing": true,
+          "countdown": 8,
+          "timer": 45
+        }
+      },
+      "comparison": "以上官方规则与改编任务目录有差异，不能只改变导线数量就标为已核实。",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/64",
+      "developmentModule": "number-card-relay",
+      "developmentAcceptance": [
+        "新增number-card-relay开发模块，核对德文／法文正反一致：48蓝、3已知红，无黄；官方任务2人明确不能玩，开发引擎拒绝2人。3／4人十二数字随机均分，5人队长及左邻各3张其余2；共享／个人X/Y排除。所有队长8种子设置／普通初始无虚构计时通过。",
+        "仅本人正面数字可宣告拆线；数字内存状态与卡牌对象视图正确归一化，G和V每个玩家各数字均按自己的所有权判断，不误用当前玩家手牌。没有对应数字时罚格跳过后仍传牌，合法匹配时不能主动跳过；咖啡杯跳过全回合、不传、不罚。",
+        "四根完成牌翻背面仍可传，每回合结束由原行动者明确选一牌及另一接收者；完成前不推进下一回合，牌总量及唯一性始终12。错误数字／旧决定／越权／自己接收完全不变，保存恢复一致，真实背面传牌后下一位行动。",
+        "双拆仍目标确认／本人选匹配线，完整两线后翻牌和传牌。目标队友清空导线时先处理其一次传牌，再处理行动者末尾传牌；传后仍有正面牌真实失败而不提前推进。最后红线免费公开仍传，传出唯一正面后只留背面合法。后段不冒充初始路径。",
+        "3–5人权威传牌阶段暂停／重启／凭据重连，完成牌翻面及待选择保留，菜单仅对应玩家，观战选其视角剔除菜单。冒用／旧选择／自己接收拒绝，重复一次移动牌，所有客户端十二牌同步；旧版17改编2–5人不强制官方2人禁令或新传牌。",
+        "375像素3–5人加观众双视图：12数字、对应值／有匹配时跳过禁用，真实四根单拆翻背面、本人传牌提示、观战切本人不获菜单、刷新后传背面牌给队友，全员牌守恒／下一回合同步、0罚格无异常溢出。浏览器退出码0，后段非整局证明。",
+        "3–5人12局推理机器人0胜12败473动作129次传牌9次不匹配跳过，非法／停止／超限0、12牌守恒；选接收者只看自己手牌与公共标记，不认证策略充分。原数字序列36回归退出码0。",
+        "75个固定来源开局全信息参考通关：3–5人各25种子，88次策略尝试、7033个合法动作、1965次传牌、103次不匹配跳过、4杯咖啡及12次倒带；保持同一初始牌局，十二牌唯一守恒，失败列表为空。不认证真实推理策略或任意发牌。",
+        "三人及五人375像素整局联机界面通关：96／110个接受动作、27／31次传牌、各3次主动红线公开、1／3次不匹配跳过，五人含一次目标清空传牌。实际三维切二维、传牌刷新重连，每步手牌／完成数字／回合／引爆器与参考一致，全部客户端胜局同步、十二牌守恒、无异常和溢出；退出码0。"
+      ]
+    },
+    {
+      "id": 66,
+      "contentEvidence": "printed-front-and-back-reviewed",
+      "implementation": "adaptation-only",
+      "completeVerification": false,
+      "sourceSlot": {
+        "index": 65,
+        "row": 7,
+        "column": 6
+      },
+      "playerCounts": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "officialSetup": {
+        "blueRange": [
+          1,
+          12
+        ],
+        "blueCopies": 4,
+        "red": {
+          "count": 2,
+          "candidates": 2
+        },
+        "yellow": {
+          "count": 2,
+          "candidates": 2
+        },
+        "twoPlayerAdjustment": "无"
+      },
+      "ruleSummary": "掩体双面地图、四方向限制加行动格、棋子、楼梯与陷阱；拆线按限制移动，单拆四根两步；黄线及特殊行动服从音频。",
+      "requiredCapability": "掩体、限制地图、音频",
+      "audioRequired": true,
+      "remainingVerification": [
+        "完整任务接入、实时音频及明确时间轴尚未实现，门／激光控制、钥匙／警卫／拉杆／炸弹任务、黄线开放及限时失败必须依原录音核实。",
+        "多步单拆与特殊阶段切换优先顺序、X/Y／探测器多值方向判定、无本人匹配值时音频双目标动作、其他装备及个人能力需要任务级验证。",
+        "组件事件目前仅内部调用，尚未绑定真实剪线结果、席位、服务器修订或私有决定；未认证2–5人服务端恢复、机器人、浏览器、任意来源开局或官方整关。"
+      ],
+      "currentProgram": {
+        "ruleset": "custom",
+        "verified": false,
+        "blueRange": [
+          1,
+          12
+        ],
+        "red": [
+          3,
+          3
+        ],
+        "yellow": [
+          4,
+          4
+        ],
+        "equipment": -1,
+        "personalDoubleDetector": true,
+        "initialInfo": "choose",
+        "detonatorAdjustment": 1,
+        "ruleFlags": {
+          "fog": true,
+          "seq": 3,
+          "noChat": true,
+          "timer": 45
+        }
+      },
+      "comparison": "Official rules above differ from the adapted catalog; do not promote by only changing wire counts.",
+      "resourceCoverage": "mission cards and required component sources located",
+      "mechanismReference": "official-mechanisms.json#/missions/65",
+      "developmentComponent": "bunker-map-movement",
+      "developmentAcceptance": [
+        "新增独立掩体组件js/bunker.js：北向4×3双面地图，墙／门／激光／条纹／陷阱／楼梯几何与来源记录及原图一致；100次A–E唯一随机分配，E实际为4–9，非黄色。尚未接入公开任务或客户端。",
+        "普通成功及安全失败均按宣告值满足的方向移动；合法方向不能停留，无满足方向或全部已确认阻挡才留原位。楼梯翻一次保留北向，陷阱返回一格处罚；四根单拆分两步决定，版本／事件去重、保存中途恢复及拒绝不变通过。",
+        "明确选择条纹特殊行动时，成功仅等待音频特殊指令，失败不移动也不执行特殊行动；不符位置或限制拒绝。门及激光未经核实的音频状态保留未知，不虚构通行／停留或提供客户端控制入口。组件专项退出码0，不等于第66关完整验收。"
+      ]
+    }
+  ],
+  "audioEvidence": {
+    "19": {
+      "source": "https://cdn.pegasus.de/public/media/d6/e0/54/1759224869/BB-Final_Mission-19.mp3?ts=1759240277",
+      "sha256": "1c83185b3113dc01d41e70e209a544e61b999e0a2ced3c6fef9e956b90e10342",
+      "analysis": "Local automatic English speech recognition, base.en. Not manually certified; no transcript or original recording redistributed.",
+      "summary": "限时拆弹场景；自动转录漏失多数后段台词，不能推定只需一个15分钟计时器。",
+      "cueVerification": "pending-listening-and-scenario-tests",
+      "asrSegments": 17
+    },
+    "30": {
+      "source": "https://cdn.pegasus.de/public/media/44/46/01/1759224867/BB-Final_Mission-30.mp3?ts=1759240277",
+      "sha256": "cbe1e9abf5afd188977f065a1100263a669a912372f5aeac04f628fe9c16d369",
+      "analysis": "Local automatic English speech recognition, base.en. Not manually certified; no transcript or original recording redistributed.",
+      "summary": "数字目标按阶段要求先剪两根；阶段奖惩、禁语、限值拆线及特殊黄线行动；自动转录时间对齐有错误。",
+      "cueVerification": "pending-listening-and-scenario-tests",
+      "asrSegments": 52
+    },
+    "42": {
+      "source": "https://cdn.pegasus.de/public/media/96/d0/2a/1759224868/BB-Final_Mission-42.mp3?ts=1759240277",
+      "sha256": "23b8733210d01f0d7db94214ad42a6bf0de18232b6a361697e1941e680f14573",
+      "analysis": "Local automatic English speech recognition, base.en. Not manually certified; no transcript or original recording redistributed.",
+      "summary": "没有通常总时限；包含恢复已剪线、换玩家位置而不移动线架、移动或移除已剪线、声音回应和完成标记移除。",
+      "cueVerification": "pending-listening-and-scenario-tests",
+      "asrSegments": 68
+    },
+    "54": {
+      "source": "https://cdn.pegasus.de/public/media/d4/e9/5f/1759224868/BB-Final_Mission-54.mp3?ts=1759240277",
+      "sha256": "26c3e173807abe30f9cc3b82fcc1e2b85f57a78d6d3a68df3e555c886e454a19",
+      "analysis": "Local automatic English speech recognition, base.en. Not manually certified; no transcript or original recording redistributed.",
+      "summary": "十分钟水下场景；动态加入红线、追加回合、补氧和氧气转移等事件；数字及准确事件时点需听证。",
+      "cueVerification": "pending-listening-and-scenario-tests",
+      "asrSegments": 66
+    },
+    "66": {
+      "source": "https://cdn.pegasus.de/public/media/1a/1d/84/1759224868/BB-Final_Mission-66.mp3?ts=1759240277",
+      "sha256": "4a0f5c163d7a45e1e76426b88454c5c38bb32aad15daa07a415aa2749d0d1b88",
+      "analysis": "Local automatic English speech recognition, base.en. Not manually certified; no transcript or original recording redistributed.",
+      "summary": "掩体分阶段目标：钥匙、守卫、楼梯、黄色激光开关、限制牌重新安排、最终目标和剩余拆弹；不是单纯全局计时。",
+      "cueVerification": "pending-listening-and-scenario-tests",
+      "asrSegments": 40
+    }
+  }
+}

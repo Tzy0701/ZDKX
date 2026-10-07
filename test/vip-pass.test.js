@@ -1,0 +1,40 @@
+const assert=require('assert'),BB=require('../js/engine'),{create,unlock,resort}=require('./vip-pass.fixture');
+function act(G,p,a){assert.equal(BB.act(G,p,a),null,JSON.stringify(a));}function reject(G,p,a){const before=JSON.stringify(G);assert(BB.act(G,p,a));assert.equal(JSON.stringify(G),before);}
+assert.equal(BB.EQUIP[16].id,'wire-cutter');assert.equal(BB.equipmentLabel(16),'9·9');assert.deepEqual(BB.equipProgress(16),{value:9,count:4,printed:'9·9'});
+for(const n of [2,3,4,5])for(let cap=0;cap<n;cap++)for(let actor=0;actor<n;actor++){
+ const G=create(n,cap,actor),copies=G.wires.filter(w=>w.o===actor&&w.v===2).map(w=>w.id),ids=copies.slice(1),all9=G.wires.filter(w=>w.v===9);assert.equal(copies.length,3);assert.equal(ids.length,2);assert(!BB.soloOk(G,actor,2));all9.slice(0,2).forEach(w=>{w.cut=true;});reject(G,actor,{a:'equip',n:16,ws:ids,val:2});unlock(G);
+ reject(G,(actor+1)%n,{a:'equip',n:16,ws:ids,val:2});reject(G,actor,{a:'equip',n:16,ws:[ids[0],ids[0]],val:2});reject(G,actor,{a:'equip',n:16,ws:copies,val:2});reject(G,actor,{a:'equip',n:16,ws:[ids[0]],val:2});reject(G,actor,{a:'equip',n:16,ws:ids,val:3});reject(G,actor,{a:'equip',n:16,ws:ids,val:2,stab:true});
+ const wrong=G.wires.find(w=>w.o===actor&&!w.cut&&w.v!==2&&Number.isInteger(w.v));reject(G,actor,{a:'equip',n:16,ws:[ids[0],wrong.id],val:2});const other=G.wires.find(w=>w.o!==actor&&!w.cut);reject(G,actor,{a:'equip',n:16,ws:[ids[0],other.id],val:2});
+ const before=JSON.parse(JSON.stringify(G)),turn=G.turnNo,character=JSON.stringify(G.players[actor].character),dd=G.players[actor].dd;act(G,actor,{a:'equip',n:16,ws:ids,val:2});assert(G.equip[0].used);assert.equal(G.turnNo,turn+1);assert.equal(G.det,0);assert.equal(G.pending,null);assert.equal(BB.cutCount(G,2),2);assert(!G.wires[copies[0]].cut);assert(ids.every(id=>G.wires[id].cut));assert.equal(JSON.stringify(G.players[actor].character),character);assert.equal(G.players[actor].dd,dd);assert.deepEqual(G.declaration.ids,ids);assert.equal(G.declaration.type,'vip-cut');assert.equal(G.wires.length,50);
+ act(before,actor,{a:'equip',n:16,ws:ids,val:2});assert.deepEqual(G,before);for(let viewer=-1;viewer<n;viewer++){const V=BB.view(G,viewer);assert.deepEqual(V.declaration.ids,ids);assert.deepEqual(V.declaration.vals,[2]);assert(V.players[actor].stands.flat().filter(w=>ids.includes(w.id)).every(w=>w.cut&&w.v===2));}reject(G,actor,{a:'equip',n:16,ws:ids,val:2});
+}
+console.log('✓ 单剪通行证2–5人所有队长／使用者：四根9解锁、自己回合恰两根同值、跨架／选后两根而保留第一根、另两根未剪也可用、一次耗牌／推进回合、个人角色独立；错误／重复拒绝不变与保存重放一致');
+{
+ const G=create(3),ids=G.wires.filter(w=>w.o===0&&w.v===2).slice(0,2).map(w=>w.id);unlock(G);ids.forEach((id,i)=>G.wires[id].v=i+1.1);G.ymark={n:2,cand:[1.1,2.1]};resort(G);act(G,0,{a:'equip',n:16,ws:ids,val:'Y'});assert(ids.every(id=>G.wires[id].cut));assert.equal(G.det,0);
+ const red=create(3),r=red.wires.filter(w=>w.o===0&&w.v===2).slice(0,2).map(w=>w.id);unlock(red);r.forEach((id,i)=>red.wires[id].v=i+1.5);resort(red);reject(red,0,{a:'equip',n:16,ws:r,val:'R'});
+ const four=create(3,0,0,4),f=four.wires.filter(w=>w.v===2).map(w=>w.id);unlock(four);act(four,0,{a:'equip',n:16,ws:f.slice(2),val:2});assert(f.slice(0,2).every(id=>!four.wires[id].cut));assert(f.slice(2).every(id=>four.wires[id].cut));
+}
+console.log('✓ 通行证同游戏值黄线可选（排序值不同），红线拒绝；持四根时仍只剪指定两根、不会自动剪全部；任务特殊例外尚待逐关验收');
+{
+ for(const constraint of ['B','G','H','K']){const G=create(3),ids=G.wires.filter(w=>w.o===0&&w.v===2).slice(0,2).map(w=>w.id);unlock(G);G.officialState={version:1,module:'personal-constraints',constraints:{kind:'personal',personal:[{id:constraint,retired:false},null,null],available:[],enteredTurn:G.turnNo}};if(constraint==='H')G.wires[ids[0]].info={t:'v',v:2};reject(G,0,{a:'equip',n:16,ws:ids,val:2});assert(!G.equip[0].used);}
+ const G=create(3),ids=G.wires.filter(w=>w.o===0&&w.v===2).slice(0,2).map(w=>w.id);unlock(G);G.mission.rules={noSolo:true};reject(G,0,{a:'equip',n:16,ws:ids,val:2});
+}
+console.log('✓ 通行证不绕过当前数值／禁止装备／已标记线／禁止单拆限制，拒绝不耗卡或角色；更晚任务的特殊覆盖仍待核实');
+{
+ const Bot=require('../js/bot');for(const n of [2,3,4,5]){const G=create(n);unlock(G);G.wires.filter(w=>w.o===0&&w.v!==2).forEach(w=>w.cut=true);const a=Bot.decide(G,0,()=>.5);assert.equal(a.a,'equip');assert.equal(a.n,16);assert.equal(a.val,2);assert.equal(a.ws.length,2);const alternate=JSON.parse(JSON.stringify(G));alternate.wires.filter(w=>w.o!==0&&!w.cut).forEach(w=>w.v=8);assert.deepEqual(Bot.decide(alternate,0,()=>.5),a,'通行证只按本人手牌选择');act(G,0,a);assert.equal(BB.cutCount(G,2),2);assert(G.equip[0].used);}
+}
+console.log('✓ 通行证机器人2–5人只按本人手牌选择合法两线，替代风险猜测；他人隐藏值变化不影响选择，个人卡不消耗');
+{
+ const fs=require('fs'),os=require('os'),path=require('path'),Service=require('../server/official'),dir=fs.mkdtempSync(path.join(os.tmpdir(),'bb55-vip-authority-'));
+ function peer(room){return {room,readyState:1,messages:[],send(raw){this.messages.push(JSON.parse(raw));}};}function last(ws,t){return ws.messages.filter(m=>m.topic===t).at(-1)?.data;}
+ try{for(const n of [2,3,4,5]){
+  let G=create(n);unlock(G);const ids=G.wires.filter(w=>w.o===0&&w.v===2).slice(1).map(w=>w.id),remaining=G.wires.find(w=>w.o===0&&w.v===2&&!ids.includes(w.id)).id,name='bb-vip'+n,seats=G.players.map(p=>({pid:p.pid,name:p.name,bot:false,credential:'通行证凭据'+p.pid})),wss={clients:new Set()};G.catalog=G.mission.catalog='campaign';fs.writeFileSync(path.join(dir,name+'.json'),JSON.stringify({version:1,name,host:seats[0].pid,mid:55,ruleset:'campaign',attempts:1,started:true,seats,observers:[],revision:0,seen:[],G}));let service=Service(wss,dir),room,peers,observer,credential;
+  function connect(){peers=seats.map(s=>{const ws=peer(name);wss.clients.add(ws);service.handle(ws,'hello',{credential:s.credential,name:s.name});return ws;});observer=peer(name);wss.clients.add(observer);service.handle(observer,'hello',credential?{credential,name:'通行证观众'}:{spectator:true,name:'通行证观众'});credential=last(observer,'official:welcome').credential;room=service.load(name);G=room.G;}
+  function send(p,id,a,revision=room.revision){service.handle(peers[p],'official:act',{gid:G.gid,revision,commandId:id,action:a});}function rejected(p,id,a){const before=JSON.stringify(G),revision=room.revision;send(p,id,a);assert.equal(JSON.stringify(G),before);assert.equal(room.revision,revision);}
+  connect();service.handle(peers[0],'official:pause',{gid:G.gid,revision:room.revision,commandId:'暂停单剪',paused:true});rejected(0,'暂停单剪动作',{a:'equip',n:16,ws:ids,val:2});wss.clients.forEach(ws=>ws.readyState=3);service=Service(wss,dir);connect();assert(G.paused);assert(!G.equip[0].used);assert(ids.every(id=>!G.wires[id].cut));service.handle(peers[0],'official:pause',{gid:G.gid,revision:room.revision,commandId:'恢复单剪',paused:false});
+  rejected(1,'冒用单剪',{a:'equip',n:16,ws:ids,val:2});rejected(0,'重复同一线',{a:'equip',n:16,ws:[ids[0],ids[0]],val:2});rejected(0,'错误宣告单剪',{a:'equip',n:16,ws:ids,val:3});const frozen=JSON.stringify(G);service.handle(observer,'official:act',{gid:G.gid,revision:room.revision,commandId:'观战冒用单剪',action:{a:'equip',n:16,ws:ids,val:2}});assert.equal(JSON.stringify(G),frozen);
+  const revision=room.revision,turn=G.turnNo;send(0,'正确单剪',{a:'equip',n:16,ws:ids,val:2});assert.equal(room.revision,revision+1);assert.equal(G.turnNo,turn+1);assert.equal(G.det,0);assert(G.equip[0].used);assert(!G.wires[remaining].cut);const once=JSON.stringify(G),after=room.revision;send(0,'正确单剪',{a:'equip',n:16,ws:ids,val:2},revision);assert.equal(JSON.stringify(G),once);assert.equal(room.revision,after);send(0,'旧修订新单剪',{a:'equip',n:16,ws:ids,val:2},revision);assert.equal(JSON.stringify(G),once);assert.equal(room.revision,after);
+  for(const ws of [...peers,observer]){const V=last(ws,'official:view').view;assert.deepEqual(V.declaration.ids,ids);assert(V.players[0].stands.flat().filter(w=>ids.includes(w.id)).every(w=>w.cut&&w.v===2));}wss.clients.forEach(ws=>ws.readyState=3);service=Service(wss,dir);connect();assert(G.equip[0].used);assert(!G.wires[remaining].cut);assert.equal(G.turnNo,turn+1);wss.clients.forEach(ws=>ws.readyState=3);
+ }}finally{fs.rmSync(dir,{recursive:true,force:true});}
+}
+console.log('✓ 通行证2–5人权威服务：暂停／凭据重连／重启保留卡与手牌，旧修订／身份／观战／错误／重复请求不变；一次选择恰两根、修订与回合仅＋1、公开选中线且未选副本不剪，已用状态重启保留');

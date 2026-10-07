@@ -11,6 +11,8 @@ const seats = (k) => Array.from({ length: k }, (_, i) => ({ pid: 'p' + i, name: 
 function rig(hands, opts = {}) {
   const mission = Object.assign({}, M[7], { info: 'none', eq: 0, rules: {} }, opts.mission || {});
   const G = BB.createGame(mission, seats(hands.length));
+  // Keep coverage for pre-choice custom saves; new-game decisions have their own tests.
+  delete G.cutFlow;
   let id = 0;
   G.wires = [];
   hands.forEach((h, o) => h.forEach((v) => G.wires.push({ id: id++, v, o, s: 0, cut: false, info: null })));

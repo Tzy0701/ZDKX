@@ -1,0 +1,15 @@
+// 同一真实来源发牌的全信息参考路径；不供机器人调用，不代替规则认证。
+const assert=require('assert'),BB=require('../js/engine'),Campaign=require('../js/campaign-rules'),{game,setup}=require('./number-bound.fixture');
+function rng(s){return()=>((s=(Math.imul(s,1664525)+1013904223)>>>0)/4294967296);}
+function cuts(G,pi){const own=G.wires.filter(w=>w.o===pi&&!w.cut),out=[];if(!own.length)return out;if(own.every(w=>BB.kindOf(w)==='r'))return [{a:'red'}];for(const value of [...new Set(own.filter(w=>Number.isInteger(w.v)).map(w=>w.v))]){if(!BB.actorValueAllowed(G,pi,value))continue;if(BB.soloOk(G,pi,value))out.push({a:'solo',val:value});if(!own.some(w=>BB.matches(w,value)&&Campaign.ownWireAllowed(G,pi,w)))continue;for(const target of G.wires.filter(w=>w.o!==pi&&!w.cut&&w.v===value&&BB.targetAllowed(G,pi,w)))out.push({a:'dual',val:value,w:target.id});}return out;}
+function apply(G,a){assert.equal(BB.act(G,G.turn,a),null,JSON.stringify(a));while(G.pending){const p=G.pending,V=BB.view(G,p.to);assert.equal(p.type,'cut');assert.equal(BB.act(G,p.to,{a:'resolve',id:p.id,w:p.step==='target'?p.ids[0]:V.pending.choices.at(-1)}),null);}return G;}
+function signature(G){return JSON.stringify([G.wires,G.equip,G.captain,G.officialState.constraints.bindings]);}
+function run(base,variant){const G=JSON.parse(JSON.stringify(base)),random=rng(variant*100003+G.np*997);let moves=0;
+ while(G.phase==='play'&&moves<100){let candidates=cuts(G,G.turn);if(!candidates.length&&BB.equipmentAllowed(G,G.turn)&&G.equip.some(e=>e.n===11&&!e.used&&BB.equipUnlocked(G,11)))G.players.forEach((_,owner)=>{if(owner!==G.turn&&cuts(G,owner).length)candidates.push({a:'equip',n:11,p:owner});});if(!candidates.length)break;
+  const scored=candidates.map(a=>{const next=apply(JSON.parse(JSON.stringify(G)),a),active=next.officialState.constraints.active,live=next.wires.filter(w=>!w.cut&&Number.isInteger(w.v)),groups=new Set(live.map(w=>w.v)).size;let safe=0;next.players.forEach((_,owner)=>safe+=cuts(next,owner).filter(a=>a.a!=='red').length);return {a,next,score:next.phase==='won'?1e9:next.phase==='lost'?-1e9:(live.length&&safe===0?-1e6:0)+safe+(cuts(next,next.turn).length?20:0)+(a.a==='solo'?5:0)-(['H','K'].includes(active)&&groups<=3?30:0)+random()*(variant?50:0)};}).sort((a,b)=>b.score-a.score);
+  if(scored[0].score<=-1e9)break;Object.keys(G).forEach(k=>delete G[k]);Object.assign(G,scored[0].next);moves++;
+ }return {G,moves};
+}
+let attempts=0,moves=0;const failures=[];const seeds=Number(process.env.BB_BOUND_SEEDS||25),variants=Number(process.env.BB_BOUND_VARIANTS||64);
+for(const n of [2,3,4,5])for(let seed=1;seed<=seeds;seed++){const base=game(n,seed%n,seed);setup(base);const fingerprint=signature(base);let result;for(let v=0;v<variants;v++){result=run(base,v);attempts++;assert.equal(signature(base),fingerprint);if(result.G.phase==='won')break;}if(result.G.phase!=='won')failures.push({n,seed,phase:result.G.phase,active:result.G.officialState.constraints.active});else{assert(result.G.wires.every(w=>w.cut));moves+=result.moves;}}
+console.log(JSON.stringify({games:seeds*4,attempts,winningMoves:moves,failures}));if(failures.length)process.exitCode=1;

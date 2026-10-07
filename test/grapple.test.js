@@ -1,0 +1,45 @@
+const assert=require('assert'),BB=require('../js/engine'),Bot=require('../js/bot'),{create,unlock}=require('./grapple.fixture');
+function act(G,p,a){assert.equal(BB.act(G,p,a),null,JSON.stringify(a));}
+function reject(G,p,a){const before=JSON.stringify(G);assert(BB.act(G,p,a));assert.equal(JSON.stringify(G),before);}
+assert.equal(BB.EQUIP[18].id,'grapple');assert.equal(BB.equipmentLabel(18),'11·11');assert.deepEqual(BB.equipProgress(18),{value:11,count:4,printed:'11·11'});
+for(const n of [2,3,4,5])for(let cap=0;cap<n;cap++)for(let actor=0;actor<n;actor++){
+ const G=create(n,cap,n*7919+cap*17+actor),source=(actor+1)%n,target=G.wires.find(w=>w.o===source&&!w.cut&&Number.isInteger(w.v)&&w.v!==11),sourceRack=target.s,old=G.players[source].stands[target.s].indexOf(target.id),blue11=G.wires.filter(w=>w.v===11);
+ blue11.slice(0,2).forEach(w=>{w.cut=true;});reject(G,actor,{a:'equip',n:18,w:target.id});unlock(G);assert(BB.equipUnlocked(G,18));const my=G.wires.find(w=>w.o===actor&&!w.cut);reject(G,actor,{a:'equip',n:18,w:my.id});reject(G,actor,{a:'equip',n:18,w:blue11[0].id});reject(G,actor,{a:'equip',n:18,w:target.id,stab:true});
+ G.wires[target.id].info={t:'v',v:target.v};const marker=JSON.parse(JSON.stringify(G.wires[target.id].info)),turn=G.turn,turnNo=G.turnNo,det=G.det;G.labels.push({a:target.id,b:my.id,t:'eq'});const id=target.id,value=target.v;
+ act(G,actor,{a:'equip',n:18,w:id});assert(G.equip[0].used);assert.equal(G.det,det);assert.equal(G.turn,turn);assert.equal(G.turnNo,turnNo);assert(!G.labels.some(l=>l.a===id||l.b===id));assert.deepEqual(G.wires[id].info,marker);assert.deepEqual(G.declaration.source,{p:source,s:sourceRack,pos:old});
+ if(G.players[actor].stands.length===2){assert.equal(G.pending.type,'grapple');assert.equal(G.wires[id].s,-1);assert(!G.players[source].stands.flat().includes(id));for(let viewer=-1;viewer<n;viewer++){const V=BB.view(G,viewer);assert.equal('drawn' in V.pending,viewer===actor);assert.equal('choices' in V.pending,viewer===actor);assert(!('value' in V.pending));assert(!('value' in V.declaration));if(viewer===actor)assert.equal(V.pending.drawn.value,value);}
+  const decision=G.pending.id;reject(G,source,{a:'grapple-rack',id:decision,rack:0});reject(G,actor,{a:'grapple-rack',id:decision-1,rack:0});reject(G,actor,{a:'grapple-rack',id:decision,rack:2});reject(G,actor,{a:'solo',val:1});
+  const bot=Bot.decide(G,actor,()=>.5);assert.equal(bot.a,'grapple-rack');assert([0,1].includes(bot.rack));const saved=JSON.parse(JSON.stringify(G));act(G,actor,{a:'grapple-rack',id:decision,rack:1});act(saved,actor,{a:'grapple-rack',id:decision,rack:1});assert.deepEqual(saved,G);reject(G,actor,{a:'grapple-rack',id:decision,rack:1});
+ }else assert.equal(G.pending,null);
+ assert.equal(G.wires[id].o,actor);assert.equal(G.wires[id].cut,false);assert.deepEqual(G.wires[id].info,marker);assert.equal(G.turn,turn);assert.equal(G.turnNo,turnNo);assert.equal(G.wires.length,50);assert.equal(new Set(G.players.flatMap(p=>p.stands.flat())).size,50);for(const p of G.players)for(const rack of p.stands)assert.deepEqual(rack.map(id=>G.wires[id].v),rack.map(id=>G.wires[id].v).sort((a,b)=>a-b));
+ for(let viewer=-1;viewer<n;viewer++){const V=BB.view(G,viewer),wire=V.players[actor].stands.flat().find(w=>w.id===id);assert.equal(wire.v,viewer===actor?value:null);assert.deepEqual(wire.info,marker);assert.deepEqual(V.declaration.destination,{p:actor,s:G.wires[id].s,pos:G.players[actor].stands[G.wires[id].s].indexOf(id)});}reject(G,actor,{a:'equip',n:18,w:G.wires.find(w=>w.o!==actor&&!w.cut).id});
+}
+console.log('✓ 抓钩2–5人所有队长／使用者：四根11解锁、非本人回合使用、原位置公开／取走暂存、双架值与选择仅本人、保存恢复／机器人放架、单架自动排序、标记保留、一次使用／旧回复／错误不变');
+{
+ for(const value of [1.1,1.5]){const G=create(3),w=G.wires.find(w=>w.o===1&&w.v!==11);w.v=value;unlock(G);act(G,0,{a:'equip',n:18,w:w.id});act(G,0,{a:'grapple-rack',id:G.pending.id,rack:0});assert.equal(G.phase,'play');assert.equal(G.det,0);assert.equal(w.cut,false);assert.equal(G.wires[w.id].v,value);}
+ const G=create(4),w=G.wires.find(w=>w.o===1&&w.v!==11);unlock(G);G.wires.filter(t=>t.o===1&&t.id!==w.id).forEach(t=>t.cut=true);G.turn=1;const turn=G.turnNo;act(G,0,{a:'equip',n:18,w:w.id});assert.equal(G.turn,2);assert.equal(G.turnNo,turn+1);assert.equal(G.det,0);
+ const frequency=create(4),f=frequency.wires.find(w=>w.o===1&&w.v!==11);unlock(frequency);f.info={t:'freq',v:1};act(frequency,0,{a:'equip',n:18,w:f.id});assert.equal(frequency.wires[f.id].info,null);
+}
+console.log('✓ 抓钩黄／红排序值移动不拆线、不引爆；拿走当前玩家最后一根线后跳过空手座位，不触发失败或额外拆线；后期任务退场例外仍待逐关核对');
+{
+ const fs=require('fs'),os=require('os'),path=require('path'),Service=require('../server/official'),dir=fs.mkdtempSync(path.join(os.tmpdir(),'bb55-grapple-authority-'));
+ function peer(room){return {room,readyState:1,messages:[],send(raw){this.messages.push(JSON.parse(raw));}};}function last(ws,t){return ws.messages.filter(m=>m.topic===t).at(-1)?.data;}
+ try{for(const n of [2,3,4,5]){
+  let G=create(n);unlock(G);G.turn=1;G.catalog=G.mission.catalog='campaign';const target=G.wires.find(w=>w.o===1&&!w.cut),wire=target.id,value=target.v,name='bb-grapple'+n,seats=G.players.map(p=>({pid:p.pid,name:p.name,bot:false,credential:'抓钩凭据'+p.pid})),wss={clients:new Set()};fs.writeFileSync(path.join(dir,name+'.json'),JSON.stringify({version:1,name,host:seats[0].pid,mid:55,ruleset:'campaign',attempts:1,started:true,seats,observers:[],revision:0,seen:[],G}));let service=Service(wss,dir),room,peers,observer,credential;
+  function connect(){peers=seats.map(s=>{const ws=peer(name);wss.clients.add(ws);service.handle(ws,'hello',{credential:s.credential,name:s.name});return ws;});observer=peer(name);wss.clients.add(observer);service.handle(observer,'hello',credential?{credential,name:'抓钩观众'}:{spectator:true,name:'抓钩观众'});credential=last(observer,'official:welcome').credential;room=service.load(name);G=room.G;}
+  function send(p,id,a){service.handle(peers[p],'official:act',{gid:G.gid,revision:room.revision,commandId:id,action:a});}
+  connect();send(0,'首次抓钩',{a:'equip',n:18,w:wire});assert(G.equip[0].used);const rev=room.revision,done=JSON.stringify(G);send(0,'首次抓钩',{a:'equip',n:18,w:wire});assert.equal(room.revision,rev);assert.equal(JSON.stringify(G),done);
+  if(n<=3){const id=G.pending.id;peers.forEach((ws,p)=>{const V=last(ws,'official:view').view;assert.equal('drawn' in V.pending,p===0);assert.equal('choices' in V.pending,p===0);assert.equal(V.declaration.source.p,1);});service.handle(observer,'official:perspective',{pid:seats[0].pid});const pd=last(observer,'official:view').view.pending;assert(!('drawn' in pd));assert(!('choices' in pd));
+   service.handle(peers[0],'official:pause',{gid:G.gid,revision:room.revision,commandId:'暂停放架',paused:true});const paused=JSON.stringify(G);send(0,'暂停放架回复',{a:'grapple-rack',id,rack:0});assert.equal(JSON.stringify(G),paused);wss.clients.forEach(ws=>ws.readyState=3);service=Service(wss,dir);connect();assert(G.paused);assert.equal(G.pending.id,id);assert.equal(last(peers[0],'official:view').view.pending.drawn.value,value);assert.equal(G.wires[wire].s,-1);service.handle(peers[0],'official:pause',{gid:G.gid,revision:room.revision,commandId:'恢复抓钩',paused:false});
+   const before=JSON.stringify(G);send(1,'冒用抓钩',{a:'grapple-rack',id,rack:0});assert.equal(JSON.stringify(G),before);send(0,'旧抓钩',{a:'grapple-rack',id:id-1,rack:0});assert.equal(JSON.stringify(G),before);send(0,'坏抓钩架',{a:'grapple-rack',id,rack:9});assert.equal(JSON.stringify(G),before);send(0,'正确放抓钩',{a:'grapple-rack',id,rack:1});const once=JSON.stringify(G),revision=room.revision;send(0,'正确放抓钩',{a:'grapple-rack',id,rack:1});assert.equal(room.revision,revision);assert.equal(JSON.stringify(G),once);
+  }
+  assert.equal(G.pending,null);assert.equal(G.wires[wire].o,0);assert.equal(G.wires[wire].cut,false);assert.equal(G.turn,1);assert.equal(G.det,0);assert.equal(last(peers[1],'official:view').view.players[0].stands.flat().find(w=>w.id===wire).v,null);wss.clients.forEach(ws=>ws.readyState=3);
+ }}finally{fs.rmSync(dir,{recursive:true,force:true});}
+}
+console.log('✓ 抓钩2–5人权威服务组件：非本人回合使用、单次修订／一次耗牌、私人暂存值／架选择、观战手牌视角屏蔽菜单、暂停／重启／凭据重连、身份／旧编号／坏架／重复回复防重；不认证55整关');
+{
+ for(const n of [2,3,4,5]){const G=create(n),pair=G.wires.filter(w=>w.v===2).slice(0,2);G.wires.forEach(w=>{w.cut=true;w.info=null;});pair.forEach((w,i)=>{w.o=i;w.s=0;w.cut=false;});pair[1].info={t:'v',v:2};G.players.forEach((p,owner)=>p.stands=p.stands.map((_,rack)=>G.wires.filter(w=>w.o===owner&&w.s===rack).sort((a,b)=>a.v-b.v||a.id-b.id).map(w=>w.id)));
+  const a=Bot.decide(G,0,()=>.5);assert.deepEqual(a,{a:'equip',n:18,w:pair[1].id});const alternate=JSON.parse(JSON.stringify(G));alternate.wires[pair[1].id].v=8;assert.deepEqual(Bot.decide(alternate,0,()=>.5),a,'机器人只用公开标记，不读取另一玩家的真实隐藏值');act(G,0,a);if(G.pending)act(G,0,Bot.decide(G,0,()=>.5));assert.equal(G.turn,0);const solo=Bot.decide(G,0,()=>.5);assert.equal(solo.a,'solo');assert.equal(solo.val,2);act(G,0,solo);assert.equal(G.phase,'won');assert.equal(G.det,0);
+ }
+}
+console.log('✓ 抓钩机器人2–5人后段：仅据公开标记／已剪数量取回最后配对线，私人放架后单拆获胜；隐藏值变化不影响选择，非从开局整局证明');

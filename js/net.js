@@ -18,7 +18,8 @@
     };
   }
 
-  Net.TOPICS = ['hello', 'lobby', 'pub', 'hand', 'act', 'chat', 'err'];
+  Net.TOPICS = ['hello', 'lobby', 'pub', 'hand', 'act', 'chat', 'err',
+    'official:welcome', 'official:lobby', 'official:view', 'official:error'];
 
   var roomCap = null;
   Net.probe = function () {
@@ -31,7 +32,7 @@
     return roomCap;
   };
   function wsAvail() {
-    // 只有自带的 Node 服务器输出的页面才带这个标记
+    // Node 或 Pages 构建后的联机页面带此标记。
     return document.querySelector('meta[name="bb-server"]') ? { kind: 'ws' } : null;
   }
 
@@ -61,7 +62,9 @@
 
   function joinWs(code) {
     return new Promise(function (resolve, reject) {
-      var url = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws';
+      var roomName = 'bb-' + code.toLowerCase();
+      Net.activeRoom = roomName;
+      var url = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws?room=' + encodeURIComponent(roomName);
       var E = emitter(), ws, me = null, closed = false, queue = [], ready = false, opened = false;
       function open() {
         ws = new WebSocket(url);
@@ -74,6 +77,7 @@
             me = m.me; ready = true;
             queue.splice(0).forEach(function (s) { ws.send(s); });
             if (!opened) { opened = true; resolve(api); }
+            else E.fire('transport:ready', { data: null, peer: me, mine: true });
           } else if (m.t === 'peers') E.firePeers(m.peers);
           else if (m.t === 'msg') E.fire(m.topic, { data: m.data, peer: m.peer, mine: m.peer === me });
         };

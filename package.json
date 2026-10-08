@@ -6,8 +6,23 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "test": "node test/rules.test.js && N=2 node test/sim.js"
+    "test": "node test/rules.test.js && node test/physical.test.js && node test/printed-dial.test.js && node test/campaign-rules.test.js && node test/audio-ready.test.js && node test/audio-timeline.test.js && node test/audio-player.test.js && node test/yellow-before-x.test.js && node test/yellow-before-x.authority.js && node test/yellow-before-x.reachability.js && node test/yellow-before-x-bots.test.js && node test/weak-link.test.js && node test/weak-link.authority.js && node test/weak-link.reachability.js && node test/weak-link-bots.test.js && node test/free-turn.test.js && node test/free-turn.authority.js && node test/free-turn.reachability.js && node test/free-turn-bots.test.js && node test/bunker.test.js && node test/challenges.test.js && node test/grapple.test.js && node test/vip-pass.test.js && node test/unique-label.test.js && node test/emergency-reserve.test.js && node test/disintegrator.test.js && node test/risky-red.test.js && node test/rookie.test.js && node test/liar.test.js && node test/negative-token-stock.test.js && node test/unsorted-x.test.js && node test/unequipped-captain.test.js && node test/secret-number.test.js && node test/outward-visibility.test.js && node test/outward-actions.test.js && node test/all-outward.test.js && node test/all-outward-bots.test.js && node test/number-bound.test.js && node test/number-bound.reachability.js && node test/number-bound-bots.test.js && node test/robot-route.test.js && node test/robot-route.reachability.js && node test/robot-route-bots.test.js && node test/constraint-ring.test.js && node test/constraint-ring.reachability.js && node test/constraint-ring-bots.test.js && node test/number-rewards.test.js && node test/number-rewards.reachability.js && node test/number-rewards-bots.test.js && node test/passing-oxygen.test.js && node test/passing-oxygen.reachability.js && node test/passing-oxygen-bots.test.js && node test/double-outward.test.js && node test/double-outward.reachability.js && node test/double-outward-bots.test.js && node test/number-relay.test.js && node test/number-relay.reachability.js && node test/number-relay-bots.test.js && node test/mixed-clues.test.js && node test/number-ends.test.js && node test/precision-four.test.js && node test/precision-number-rewards.test.js && node test/tripwire.test.js && node test/nano-robot.test.js && node test/nano-waiting.test.js && node test/shared-oxygen.test.js && node test/number-claim.test.js && node test/agent-seven.test.js && node test/number-arithmetic.test.js && node test/submarine-oxygen.test.js && node test/robot-pressure.test.js && node test/robot-pressure.reachability.js && node test/robot-pressure-bot.integration.js && node test/all-false-info.test.js && node test/all-false-info.reachability.js && node test/all-false-info-bot.integration.js && node test/number-order.test.js && node test/number-order.reachability.js && node test/number-order-bot.integration.js && node test/memory-sea.test.js && node test/memory-sea.reachability.js && node test/memory-sea-bot.integration.js && node test/personal-oxygen.test.js && node test/personal-oxygen.reachability.js && node test/personal-oxygen-bot.integration.js && node test/yellow-three.test.js && node test/yellow-three.reachability.js && node test/yellow-three-bot.integration.js && node test/number-arithmetic.reachability.js && node test/number-arithmetic-bot.integration.js && node test/agent-seven-bot.integration.js && node test/agent-seven.reachability.js && node test/number-claim.reachability.js && node test/number-claim-bot.integration.js && node test/shared-oxygen.reachability.js && node test/shared-oxygen-bot.integration.js && node test/nano-robot-bot.integration.js && node test/blue-as-red.test.js && node test/double-unlock.test.js && node test/blind-equipment.test.js && node test/radar-command.test.js && node test/yellow-clues.test.js && node test/cut-choice.test.js && node test/declaration.test.js && node test/pause.test.js && node test/official.test.js && node test/spectator.test.js && N=2 node test/sim.js && CATALOG=campaign N=2 node test/sim.js",
+    "test:campaign": "node test/campaign-validation.js",
+    "test:multiplayer": "node test/multiplayer.integration.js",
+    "service:install": "node scripts/install-services.js",
+    "test:audio": "node test/audio-files.test.js && node test/audio-ready.integration.js && node test/audio-timeline.integration.js",
+    "build:pages": "node scripts/build-pages.js",
+    "dev:worker": "npx wrangler@4.148.0 dev --config cloudflare/worker/wrangler.toml",
+    "deploy:worker": "npx wrangler@4.148.0 deploy --config cloudflare/worker/wrangler.toml",
+    "deploy:pages": "npm run build:pages && npx wrangler@4.148.0 pages deploy dist/pages --project-name bomb-busters",
+    "test:cloudflare": "node test/cloudflare-core.test.js && node test/cloudflare-adapter.test.js",
+    "dev:pages": "npm run build:pages && npx wrangler@4.148.0 pages dev dist/pages --port 8788",
+    "test:cloudflare:runtime": "node test/cloudflare-runtime.integration.js"
   },
-  "engines": { "node": ">=18" },
-  "dependencies": { "ws": "^8.18.0" }
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
 }

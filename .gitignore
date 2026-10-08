@@ -1,2 +1,12 @@
 node_modules/
+.official-data/
 .DS_Store
+
+# Cloudflare 构建和本地模拟器状态
+dist/
+.wrangler/
+.dev.vars
+
+# 编辑器历史和临时会话文件
+.history/
+:memory:.ses

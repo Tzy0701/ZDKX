@@ -1,0 +1,8 @@
+name = "bomb-busters"
+pages_build_output_dir = "./dist/pages"
+compatibility_date = "2025-06-01"
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "GameRoom"
+script_name = "bomb-busters-rooms"

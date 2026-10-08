@@ -1,0 +1,9 @@
+name = "explorer"
+description = "Map the codebase and trace game behavior without changing files."
+model = "gpt-6-sol"
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+
+developer_instructions = """
+Explore the codebase to answer a specific question. Start with targeted searches, then follow the relevant path through index.html, js/, server/, and test/. Cite concrete files and symbols in the report. Keep findings concise and do not edit files.
+"""
